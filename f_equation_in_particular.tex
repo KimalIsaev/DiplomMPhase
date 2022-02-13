@@ -1,0 +1,206 @@
+Рассмотрим \eqref{F1FirstEquationParticular}, с точностью до \(O(\varepsilon^2)\),
+используя разложение:
+\[e^{\pm j \varepsilon w} = 1 \pm j \varepsilon w + O(\varepsilon^2)\]
+
+\begin{equation}\begin{aligned}\label{F1FirstPrecisionEquationParticular}
+j\varepsilon wa(x) &\Fln (w,\tau) = \\
+   =&-\Q{\lambda+\allExecutionFullIntensity{n}{k}}\seqStandart{F^{(1)}}{n}(w,\tau)+\\
+    &+j \varepsilon \En \pdv{\seqStandart{F^{(1)}}{n}(w,\tau)}{w} - \\
+    &-x \En \seqStandart{F^{(1)}}{n}(w,\tau) + \\
+    &+\overline{\En} \lambda \seqStandart{F^{(1)}}{n}(w,\tau)+\\
+    &+j \overline{\En} \lambda \varepsilon w \seqStandart{F^{(1)}}{n}(w,\tau)+\\
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{F^{(1)}}{n}(w,\tau) + \\
+    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinus{F^{(1)}}{n}{k}(w,\tau) + \\
+    &-j \varepsilon \sum_{k=0}^{M-1}q_k \pdv{\seqMinus{F^{(1)}}{n}{k}(w,\tau)}{w} + \\
+    &+x \sum_{k=0}^{M-1}q_k \seqMinus{F^{(1)}}{n}{k}(w,\tau) + \\
+    &-jx \varepsilon w \sum_{k=0}^{M-1}q_k \seqMinus{F^{(1)}}{n}{k}(w,\tau) + \\
+    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{F^{(1)}}{n}{f}(w,\tau) + \\
+    &+\En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{F^{(1)}}{n}{f}(w,\tau) + \\
+    &+j \En r_2 \varepsilon w \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{F^{(1)}}{n}{f}(w,\tau) + \\
+    &+r_1 \feedbackSum{f}{k}
+        q_k \mu_f (n_f+1) \seqMinusPlus{F^{(1)}}{n}{k}{f}(w,\tau).
+\end{aligned}\end{equation}
+
+Покажем что решением является:
+\begin{equation}
+\Fln(w, \tau, \varepsilon) = \Phi(w, \tau) \{\Rn + j\varepsilon w \gn \}
+    - j \varepsilon \pdv{\Phi (w, \tau)}{w} \pn + \varepsilon C \Rn
+    + O(\varepsilon^2) 
+\end{equation}
+%перепиши по определению
+{\allowdisplaybreaks\begin{align*}
+j\varepsilon wa(x) \Phi (w, \tau) \Rn = \\=
+    &-\Q{\lambda+\allExecutionFullIntensity{n}{k}}
+        \Phi(w, \tau)\seqStandart{R}{n}-\\
+    &-j\varepsilon w\Q{\lambda+\allExecutionFullIntensity{n}{k}}
+        \Phi(w, \tau)\seqStandart{g}{n}+\\
+    &+j\varepsilon\Q{\lambda+\allExecutionFullIntensity{n}{k}}
+        \pdv{\Phi(w,\tau)}{w}\seqStandart{\varphi}{n}-\\
+    &-\varepsilon C \Q{\lambda+\allExecutionFullIntensity{n}{k}}
+        \seqStandart{R}{n}+\\
+    &+j \varepsilon \En \pdv{\Phi(w,\tau)}{w}
+        \seqStandart{R}{n} - \\
+    &-x \En \Phi(w, \tau) \seqStandart{R}{n} - \\
+    &-j \varepsilon w x \En \Phi(w, \tau) \seqStandart{g}{n} + \\
+    &+j \varepsilon x \En \pdv{\Phi(w,\tau)}{w} \seqStandart{\varphi}{n}- \\
+    &-\varepsilon C x \En \seqStandart{R}{n} + \\
+    &+\overline{\En} \lambda 
+        \Phi(w, \tau)\seqStandart{R}{n}+\\
+    &+j \varepsilon w \overline{\En} \lambda 
+        \Phi(w, \tau)\seqStandart{g}{n}-\\
+    &-j\varepsilon \overline{\En} \lambda 
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &+\varepsilon C \overline{\En} \lambda 
+        \seqStandart{R}{n}+\\
+    &+j \varepsilon w\overline{\En} \lambda  
+        \Phi(w, \tau)\seqStandart{R}{n}+\\
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} 
+        \Phi(w, \tau)\seqStandart{R}{n}+\\
+    &+j \varepsilon w r_1 \Q{\allExecutionRelativeIntensity{n}{k}} 
+        \Phi(w, \tau)\seqStandart{g}{n}-\\
+    &-j \varepsilon r_1 \Q{\allExecutionRelativeIntensity{n}{k}} 
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &+\varepsilon C r_1 \Q{\allExecutionRelativeIntensity{n}{k}} 
+        \seqStandart{R}{n}+\\
+    &+\lambda\sum_{k=0}^{M-1}q_k 
+        \Phi(w, \tau)\seqStandart{R}{n}+\\
+    &+j \varepsilon w \lambda\sum_{k=0}^{M-1}q_k 
+        \Phi(w, \tau)\seqStandart{g}{n}-\\
+    &-j \varepsilon \lambda\sum_{k=0}^{M-1}q_k 
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &+\varepsilon C \lambda\sum_{k=0}^{M-1}q_k 
+        \seqStandart{R}{n}-\\
+    &-j \varepsilon \sum_{k=0}^{M-1}q_k 
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{R}{n}+\\
+    &+x \sum_{k=0}^{M-1}q_k 
+        \Phi(w, \tau)\seqStandart{R}{n}+\\
+    &+j \varepsilon w x \sum_{k=0}^{M-1}q_k 
+        \Phi(w, \tau)\seqStandart{g}{n}-\\
+    &-j \varepsilon x \sum_{k=0}^{M-1}q_k 
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &+\varepsilon C x \sum_{k=0}^{M-1}q_k 
+        \seqStandart{R}{n}-\\
+    &-j\varepsilon w x \sum_{k=0}^{M-1}q_k 
+        \Phi(w, \tau)\seqStandart{w}{n}+\\
+    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \Phi(w, \tau)\seqStandart{R}{n}+\\
+    &+j \varepsilon w\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \Phi(w, \tau)\seqStandart{g}{n}-\\
+    &-j \varepsilon \En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &+\varepsilon C \En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \seqStandart{R}{n}+\\
+    &+\En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \Phi(w, \tau)\seqStandart{R}{n}+\\
+    &+j \varepsilon w\En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \Phi(w, \tau)\seqStandart{g}{n}-\\
+    &-j \varepsilon \En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &+\varepsilon C \En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \seqStandart{R}{n}+\\
+    &+r_1 \feedbackSum{f}{k} q_k \mu_f (n_f+1)
+        \Phi(w, \tau)\seqStandart{R}{n}+\\
+    &+j \varepsilon w r_1 \feedbackSum{f}{k} q_k \mu_f (n_f+1)
+        \Phi(w, \tau)\seqStandart{R}{n}-\\
+    &-j \varepsilon r_1 \feedbackSum{f}{k} q_k \mu_f (n_f+1)
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &+\varepsilon C r_1 \feedbackSum{f}{k} q_k \mu_f (n_f+1)
+        \seqStandart{R}{n}.
+\end{align*}}
+Разделим данное выражение на несколько отдельных частей, 
+и докажем тождественность каждой 
+(а значит и тождественность данного выражения):
+на уравнения с действительной частью(разделим на \(\Phi(w,\tau)\), 
+с мнимой частью (что разделена на \(j \varepsilon \))
+и на включающие в себя C(разделим на \(\varepsilon C\)):
+
+Разберёмся сначала с C:
+{\allowdisplaybreaks\begin{align*}
+0=
+    &-\Q{\lambda+\allExecutionFullIntensity{n}{k}} \seqStandart{R}{n}+\\
+    &-x \En \seqStandart{R}{n} + \\
+    &+\overline{\En} \lambda  \seqStandart{R}{n}+\\    
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}}\seqStandart{R}{n}+\\
+    &+\lambda\sum_{k=0}^{M-1}q_k \seqStandart{R}{n}+\\
+    &+x \sum_{k=0}^{M-1}q_k \seqStandart{R}{n}+\\
+    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1)\seqStandart{R}{n}+\\
+    &+\En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1)\seqStandart{R}{n}+\\
+    &+r_1 \feedbackSum{f}{k} q_k \mu_f (n_f+1)\seqStandart{R}{n}.
+\end{align*}}
+
+{\allowdisplaybreaks\begin{align*}
+0=
+    &-\Q{\En\T{\lambda + x}+\allExecutionFullIntensity{n}{k}} 
+        \seqStandart{R}{n}+\\
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}}\seqStandart{R}{n}+\\
+    &+\T{\lambda + x} \sum_{k=0}^{M-1}q_k \seqStandart{R}{n}+\\
+    &+\En (1 - r_1) \sum_{f=0}^{M-1} \mu_f (n_f + 1)\seqStandart{R}{n}+\\
+    &+r_1 \feedbackSum{f}{k} q_k \mu_f (n_f+1)\seqStandart{R}{n}.
+\end{align*}}
+Что соответствует \eqref{REquationParticular}, а значит тождественно.
+
+Действительная часть:
+{\allowdisplaybreaks\begin{align*}
+0 = 
+    &-\Q{\lambda+\allExecutionFullIntensity{n}{k}}\seqStandart{R}{n}+\\
+    &-x \En \seqStandart{R}{n} + \\
+    &+\overline{\En} \lambda \seqStandart{R}{n}+\\
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{R}{n}+\\
+    &+\lambda\sum_{k=0}^{M-1}q_k \seqStandart{R}{n}+\\
+    &+x \sum_{k=0}^{M-1}q_k \seqStandart{R}{n}+\\
+    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1)\seqStandart{R}{n}+\\
+    &+\En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1)\seqStandart{R}{n}+\\
+    &+r_1 \feedbackSum{f}{k} q_k \mu_f (n_f+1)\seqStandart{R}{n}+\\
+\end{align*}}
+Аналогично предыдущим преобразованиям получается 
+также тождественное утверждение.
+
+Мнимая:
+{\allowdisplaybreaks\begin{align*}
+wa(x) \Phi (w, \tau) \Rn = \\=
+    &- w\Q{\lambda+\allExecutionFullIntensity{n}{k}}
+        \Phi(w, \tau)\seqStandart{g}{n}+\\
+    &+\Q{\lambda+\allExecutionFullIntensity{n}{k}}
+        \pdv{\Phi(w,\tau)}{w}\seqStandart{\varphi}{n}-\\
+    &+ \En \pdv{\Phi(w,\tau)}{w}
+        \seqStandart{R}{n} - \\
+    &- w x \En \Phi(w, \tau) \seqStandart{g}{n} + \\
+    &+ x \En \pdv{\Phi(w,\tau)}{w} \seqStandart{\varphi}{n}- \\
+    &+ w \overline{\En} \lambda 
+        \Phi(w, \tau)\seqStandart{g}{n}-\\
+    &- \overline{\En} \lambda 
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &+ w\overline{\En} \lambda  
+        \Phi(w, \tau)\seqStandart{R}{n}+\\
+    &+ w r_1 \Q{\allExecutionRelativeIntensity{n}{k}} 
+        \Phi(w, \tau)\seqStandart{g}{n}-\\
+    &- r_1 \Q{\allExecutionRelativeIntensity{n}{k}} 
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &+ w \lambda\sum_{k=0}^{M-1}q_k 
+        \Phi(w, \tau)\seqStandart{g}{n}-\\
+    &- \lambda\sum_{k=0}^{M-1}q_k 
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &- \sum_{k=0}^{M-1}q_k 
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{R}{n}+\\
+    &+ w x \sum_{k=0}^{M-1}q_k 
+        \Phi(w, \tau)\seqStandart{g}{n}-\\
+    &- x \sum_{k=0}^{M-1}q_k 
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &- w x \sum_{k=0}^{M-1}q_k 
+        \Phi(w, \tau)\seqStandart{w}{n}+\\
+    &+ w\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \Phi(w, \tau)\seqStandart{g}{n}-\\
+    &- \En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &+ w\En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \Phi(w, \tau)\seqStandart{g}{n}-\\
+    &- \En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+    &+ \En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1)
+        \Phi(w, \tau)\seqStandart{R}{n}+\\
+    &+ w r_1 \feedbackSum{f}{k} q_k \mu_f (n_f+1)
+        \Phi(w, \tau)\seqStandart{R}{n}-\\
+    &- r_1 \feedbackSum{f}{k} q_k \mu_f (n_f+1)
+        \pdv{\Phi(w, \tau)}{w}\seqStandart{\varphi}{n}+\\
+\end{align*}}
+  

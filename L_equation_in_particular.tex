@@ -1,0 +1,54 @@
+\begin{equation}\begin{aligned}
+    0 = 
+    &-\Q{\En\T{\lxt} + \allExecutionFullIntensity{n}{k}}
+        \seqStandart{L}{n} + \\
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{L}{n} + \\
+    &+\Q{\lxt}\sum_{k=0}^{M-1}q_k \seqMinus{L}{n}{k}  + \\
+    &+\En(1-r_1)\sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{L}{n}{f} + \\
+    &+r_1 \feedbackSum{f}{k} 
+        q_k \mu_f (n_f+1) \seqMinusPlus{L}{n}{k}{f} 
+\end{aligned}\end{equation}
+
+\begin{equation}\begin{aligned}
+    0 = 
+    &-\Q{\En\T{\lxt} + \allExecutionFullIntensity{n}{k}} \Ldefinition{n}{d} +  \\
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}}  \Ldefinition{n}{d} +  \\
+    &+\Q{\lxt}\sum_{k=0}^{M-1}  q_k \LminusDefinition{n}{d}{k} + \\
+    &+\En(1-r_1)\sum_{f=0}^{M-1} 
+        \mu_f (n_f+1) \frac{1}{n_f + 1}
+        \executionAbsoluteReverseIntensity{f} \cdot  \\
+        & \hspace{3cm} \cdot \Q{\LunityBase}^{1 + \sum_{d=0}^{M-1}n_d} 
+        \T{\LuniqueStandart{n}{d}} + \\
+    &+r_1 \feedbackSum{f}{k} 
+        q_k \mu_f (n_f+1) \frac{1}{n_f + 1} 
+        \executionAbsoluteReverseIntensity{f}
+        \Q{n_k\executionAbsoluteIntensity{k}} \cdot  \\
+        & \hspace{3cm} \cdot \Ldefinition{n}{d}   
+\end{aligned}\end{equation}
+
+\begin{equation}\begin{aligned}
+    0 = 
+    &-\Q{\En\T{\lxt} + \allExecutionFullIntensity{n}{k}}  + \\
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} + \\
+    &+\Q{\lxt}\sum_{k=0}^{M-1}\mu_k n_k \frac{1-r_1}{\lxt} + \\
+    &+\En(1-r_1)\sum_{f=0}^{M-1} q_f \Q{\LunityBase} \\
+    &+r_1 \feedbackSum{f}{k} q_f \mu_k n_k 
+\end{aligned}\end{equation}
+
+\begin{equation}\begin{aligned}
+    0 = 
+    &-\En\Q{\lxt} - \allExecutionFullIntensity{n}{k} + \\
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} + \\
+    &+\Q{1-r_1} \sum_{k=0}^{M-1}\mu_k n_k + \\
+    &+\En\Q{\lxt} + \\
+    &+r_1 \feedbackSum{f}{k} q_f \mu_k n_k 
+\end{aligned}\end{equation}
+
+\begin{equation}
+    0 =
+    \allExecutionRelativeIntensity{n}{k} 
+    -\sum_{k=0}^{M-1}\mu_k n_k 
+    +\feedbackSum{f}{k} q_f \mu_k n_k 
+\end{equation}
+Следовательно определение L было предположено верно.
+

@@ -1,0 +1,121 @@
+Подключаем все необходимые библиотеки:
+sympy для символьного исчисления,
+numpy для работы c матрицами: 
+\begin{minted}{Python}
+from sympy import Matrix
+import numpy as np
+\end{minted}
+
+Определим функцию для вычисления списка из функции 
+для одних и тех же аргументов:
+\begin{minted}{Python}
+def value_eval(q, y, z, arg_dict, temp_arg_dict, value_function_lst):
+	return [f(q, y, z, arg_dict, temp_arg_dict) for f in value_function_lst]
+\end{minted}
+
+Определим функцию для вычисления списка из функции
+для одних и тех же аргументов,
+только если проверочная функция не равна нулю,
+иначе отдаём пустой список, так как значение проверочной функции
+говорит о том что вычислять ничего не надо.
+\begin{minted}{Python}
+def eval_value_function_list_if_check(
+		q, y, z, const_arg, arg, check_f, value_f_lst):
+	if check_f(q, y, z, const_arg, arg):
+		return value_eval(q, y, z, const_arg, arg, value_f_lst)
+	else:
+		return []
+\end{minted}
+
+Определим функцию, которая вычисляет список из функций, где
+первая элесент является проверочной функцие, а все оставшиеся
+значимыми.
+Если же список пуст, то выдаём обратно пустой список:
+\begin{minted}{Python}
+def eval_function_list(q, y, z, const_arg, arg, function_lst):
+	if (len(function_lst) > 1):
+		check_f = function_lst[0]
+		value_f_lst = function_lst[1:]
+		return eval_value_function_list_if_check(q, y, z,
+			const_arg, arg, check_f, value_f_lst)
+	else:
+		return []
+\end{minted}
+
+Определим функцию, что вычисляет список из списков функций(LFL)
+с локальными аргументами, где локальные аргументы, это
+те что могут поменятся с каждым  измением 
+состояния системы массового обслуживания.
+Причём в этом списке только лишь один элемент
+иммет проверучную функцию, что не равна нулю, так как
+система массового обслуживания может находится
+одновременно только в одном единственном состоянии,
+а проверочная функция проверяет в каком именно 
+состоянии она находится:
+\begin{minted}{Python}
+def eval_LFL_with_local_arg(q, y, z, const_arg, LFL, local_arg):
+	for f in LFL:
+		e = eval_function_list(q, y, z, const_arg, local_arg, f)
+		if e:
+			return e
+	return []
+\end{minted}
+
+Определим функцию, что вычисляет список из списков функций(LFL),
+вычислив перед этим из всех остальных аргументов, что у нас имеются,
+локальные. Если же не имеется изменение состояния, или хотя бы
+изменения орбиты, в таком случае возвращаем пустой список.
+\begin{minted}{Python}
+def eval_LFL(q, y, z, const_arg, LFL, create_arg):
+	if (q == 0) and (y == z):
+		return []
+	else:
+		local_arg = create_arg(q, y, z, const_arg)
+		return eval_LFL_with_local_arg(q, y, z,
+			const_arg, LFL, local_arg)
+\end{minted}
+
+Заполняем вектор меньшей длины нулями
+до необходимой длины:
+\begin{minted}{Python}
+def fill_to_standart_size(lst, n):
+	return lst + [0]*(n-len(lst))
+\end{minted}
+
+Создаём матрицу из векторов, что состоят из коэфицентов для полиномов,
+которые зависят от количества заявок на орбите:
+\begin{minted}{Python}
+def create_state_matrix_with_polynom_inside(
+		q, J, N, const_arg, list_of_function_list, create_arg):
+	return [[fill_to_standart_size(
+		eval_LFL(q, y, z, const_arg, list_of_function_list, create_arg),
+				N) for z in J] for y in J]
+\end{minted}
+
+Переворачиваем матрицу так, что бы полином внутри вышел наружу,
+таким образом у нас полуается вектор из матриц, что являются
+коэфицентами для полинома, который зависит от количества заявок на орбите:
+\begin{minted}{Python}
+def transpose_state_matrix_inside(Mq):
+	return [Matrix(m) for m in np.transpose(Mq, axes=(2, 0, 1)).tolist()]
+\end{minted}
+
+Создаём вектор из вектор из матриц, что являются
+коэфицентами для полинома, который зависит от количества заявок на орбите.
+\begin{minted}{Python}
+def create_orbit_change_row(
+		q, J, N, const_arg, list_of_function_list, create_arg):
+	return transpose_state_matrix_inside(
+		create_state_matrix_with_polynom_inside(
+			q, J, N, const_arg, list_of_function_list, create_arg))
+\end{minted}
+
+Создаём конечную матрицу из матриц \(\boldsymbol{C}_{q.k}\). 
+\begin{minted}{Python}
+def algorithm(J, N, W, const_arg, list_of_function_list,
+		create_arg=lambda q, z, y, arg_dict: {}):
+	return [create_orbit_change_row(
+			q, J, N+1, const_arg, list_of_function_list, create_arg)
+		for q in range(-1, W + 1)]
+\end{minted}
+

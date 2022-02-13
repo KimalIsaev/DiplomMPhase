@@ -1,0 +1,60 @@
+Устреми h к нулю, получаем:
+\[
+	\dv{P_{y^*}(i, t)}{t} = 
+	- \sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq y^*\& w\neq i}^{\infty}L^{(w-i)}_{y^*, \tilde{\nu}}(i)P_{y^*}(i, t)+
+	\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq y^*\& w\neq i}^{\infty}
+	L^{(i-w)}_{\tilde{\nu}, y^*}(w)P_{\tilde{\nu}}(w, t).
+\]
+\begin{align*}
+	\dv{P_{y^*}(i, t)}{t} = &
+	- \sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq y^*\& w\neq i}^{\infty}
+	\bigg[ C^{(w-i)}_{y^*, \tilde{\nu}, 0}+\sum^{N}_{k=1}i^kC^{(w-i)}_{y^*, \tilde{\nu}, k} \bigg]P_{y^*}(i, t)+ \\
+	&+\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq y^*\& w\neq i}^{\infty}
+	\bigg[ C^{(i-w)}_{\tilde{\nu},y^*, 0}+\sum^{N}_{k=1}w^kC^{(i-w)}_{\tilde{\nu},y^*, k} \bigg]P_{\tilde{\nu}}(w, t).
+\end{align*}
+Введём частичную характеристическую функцию \[H_{z^*}(u,t)=\sum_{i=0}^\infty e^{iuj}P_{z^*}(i, t),\] 
+где j - мнимая единица.\\
+А теперь складываем по i все различные равенства, оставляя \(y^*\) и t по-
+стоянными, каждое домножив перед этим каждое на \(e^{iuj}\):
+\begin{align*}
+	\pdv{H_{y^*}(u, t)}{t} = &-\sum_{i = 0}^{\infty} 
+	\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq y^*\& w\neq i}^{\infty}
+	\bigg[ C^{(w-i)}_{y^*, \tilde{\nu}, 0}+\sum^{N}_{k=1}i^kC^{(w-i)}_{y^*, \tilde{\nu}, k} \bigg]P_{y^*}(i, t)e^{iuj}+ \\
+	&+\sum_{i = 0}^{\infty} \sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq y^*\& w\neq i}^{\infty}
+	\bigg[ C^{(i-w)}_{\tilde{\nu}, y^*, 0}+\sum^{N}_{k=1}w^kC^{(i-w)}_{\tilde{\nu}, y^*, k} \bigg]P_{\tilde{\nu}}(w, t)e^{iuj}.
+\end{align*}
+Мы можем замениь разности w-i и i-w на q, а так как только конечное число \(C^{(q)}_{z^*,y^*, k}\) не равны нулю, мы можем переставить знаки суммирования:
+\begin{align*}
+	\pdv{H_{y^*}(u, t)}{t} = &-
+	\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{q = -1, \atop x^*\neq y^*\& q\neq 0}^{W}\sum_{i = 0}^{\infty} 
+	\bigg[ C^{(q)}_{y^*, \tilde{\nu}, 0}+\sum^{N}_{k=1}i^kC^{(q)}_{y^*, \tilde{\nu}, k} \bigg]P_{y^*}(i, t)e^{iuj}+ \\
+	&+\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{q = -1, \atop x^*\neq y^*\& q\neq 0}^{W}\sum_{i = 0}^{\infty} 
+	\bigg[ C^{(q)}_{\tilde{\nu}, y^*, 0}+\sum^{N}_{k=1}(i-q)^kC^{(q)}_{\tilde{\nu}, y^*, k} \bigg]P_{\tilde{\nu}}(i-q, t)e^{iuj}.
+\end{align*}
+\fbox{
+	\parbox{\textwidth}{
+		Рассмотрим член второй суммы:\\
+		\(\forall k \in [1, N] \subset \mathbb{Z},\forall \bar{y}\in J , \forall \nu \in [1, |\mathbb{J}|] \subset \mathbb{Z},
+		\forall q \in [1, W] \subset \mathbb{N}\)
+		\[e^{quj}\sum_{i = 0}^{\infty}{(i-q)^kC^{(q)}_{y^*,\tilde{\nu},k}P_{\tilde{\nu}}(i-q,t)e^{(i-q)uj}}.\]
+		Cделаем замену i-q на w:
+		\[e^{quj}\sum_{w = -q}^{\infty}w^kC^{(q)}_{y^*,\tilde{\nu},k}e^{wuj}P_{\tilde{\nu}}(w,t).\]
+		В связи с тем что \(\forall l \in [-W, -1] \subset \mathbb{Z}, P_{\tilde{\nu}}(l,t)=0\) можем записать:
+		\[e^{quj}C^{(q)}_{y^*,\tilde{\nu},k}\sum_{w = 0}^{\infty}w^ke^{wuj}P_{\tilde{\nu}}(w,t).\]
+		Теперь рассмотрим тоже самое слагаемое но с q = -1: \\
+		\(\forall y^* \in [0, M^n - 1] \subset \mathbb{Z}, \forall \nu \in [1, |\mathbb{J}|], \forall k \in [1, N] \subset \mathbb{Z}\)
+		\[e^{-ju}\sum_{i = 0}^{\infty}{(i+1)}^kC^{-1}_{y^*,\tilde{\nu},k}e^{(i+1)uj}P_{\tilde{\nu}}(w,t).\]
+		\[e^{-ju}C^{-1}_{y^*,\tilde{\nu},k}\sum_{i = 1}^{\infty}i^ke^{iuj}P_{\tilde{\nu}}(w,t).\]
+		Нуль перемноженное на конечное число равно нулю, следовательно: 
+		\[e^{-ju}C^{-1}_{y^*,\tilde{\nu},k}\sum_{i = 0}^{\infty}i^ke^{iuj}P_{\tilde{\nu}}(w,t).\]
+}}
+Так как \(\forall k \in [1, N] \subset \mathbb{Z}, 
+\pdv[k]{H_{\tilde{\nu}}(u,t)}{u} =j^k\sum_{i=0}^\infty i^k e^{iuj}P_{\tilde{\nu}}(i, t)\):
+\begin{align*}
+	\pdv{H_{y^*}(u,t)}{t} =&-
+	\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{q = -1 ,\atop \tilde{\nu}\neq y^*\& q\neq 0 }^{W}
+	\sum_{k = 0}^{N} (-j)^kC^{(q)}_{y^*, \tilde{\nu},k}\pdv[k]{H_{y^*}(u,t)}{u}\\
+	&+ \sum_{\nu = 1}^{|\mathbb{J}|}
+	\sum_{q = -1, \atop \tilde{\nu}\neq y^*\& q\neq 0}^{W}\sum_{k = 0}^{N} 
+	(-j)^k e^{juq} C^{(q)}_{y^*,\tilde{\nu},k}\pdv[k]{H_{\tilde{\nu}}(u,t)}{u}.\\
+\end{align*}

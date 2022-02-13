@@ -1,0 +1,37 @@
+Построим уравнения Колмогорова, для \(P_{y^*}(i, t + h)\), где \\
+\(y^* \in |\mathbb{J}|, i \in [0;+\infty) \subset \mathbb{Z}, t \in [0;+\infty) \subset \mathbb{R}\), а h очень мало
+\[P_{y^*}(i, t+h) = \sum_{x^* = 0, w = 0}^{M^n - 1,\infty}P_{x^*}(w, t)P_{x^*, y^*}(i, w, t, h).\]
+Вынесем из суммы элемент \(P_{y^*}(i, t)P_{y^*, y^*}(i, i, t, h)\) и распишем через сумму несовместных событий:
+\begin{urv}{60} 
+	P_{y^*}(i, t+h) = \left[1 - \sum_{x^* = 0, w = 0,\atop x^*\neq y^*\& w\neq i}^{M^n - 1,\infty}
+	P_{y^*, x^*}(i, w, t, h)\right]P_{y^*}(i, t)
+	+\sum_{x^* = 0, w = 0,\atop x^*\neq y^*\& w\neq i}^{M^n - 1,\infty}
+	P_{x^*, y^*}(i, w, t, h)P_{x^*}(w, t).
+\end{urv}
+Заменим вероятность перехода по 3 условию \eqref{condition_of_main_theorem}:
+\begin{urv}{60}
+	P_{y^*}(i, t+h) = \left[2 - h 
+	\sum_{x^* \in J}\sum_{w=0,\atop x^*\neq y^*\& w\neq i}^{\infty}
+	L^{(w-i)}_{y^*, x^*}(i)\right]
+	P_{y^*}(i, t)+h\sum_{x^* \in J}\sum_{w=0,\atop x^*\neq y^*\& w\neq i}^{\infty}
+	L^{(i-w)}_{x^*, y^*}(w)P_{x^*}(w, t)+o(h).
+\end{urv}
+Заменим суммированние по множеству на суммированние от 1 до \(|\mathbb{J}|\).
+Пронумируем элементы множества \(\mathbb{J}\) в порядке возрастания значения нумеровочной функции.
+\[j^*_1 < j^*_2 < j^*_3 <... < j^*_{|\mathbb{J}|} < M^n,\]
+\[\forall \nu \in [1, |\mathbb{J}|] \subset \mathbb{Z}, \tilde{\nu} = j^*_{\nu}.\]
+В таком случае:
+\begin{urv}{60}
+	P_{y^*}(i, t+h) = \left[1 - h 
+	\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq y^*\& w\neq i}^{\infty}
+	L^{(w-i)}_{ y^*, \tilde{\nu}}(i)\right]
+	P_{y^*}(i, t)+h\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq y^*\& w\neq i}^{\infty}
+	L^{(i-w)}_{\tilde{\nu}, y^*}(w)P_{\tilde{\nu}}(w, t)+o(h).
+\end{urv}
+Перенесём \(P_{y^*}(i, t)\) в левую часть и разделим всё на h:
+\begin{urv}{60}
+	\frac{P_{y^*}(i, t+h) - P_{y^*}(i, t)}{h}  =
+	- \sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq y^*\& w\neq i}^{\infty}L^{(w-i)}_{y^*, \tilde{\nu}}(i)P_{y^*}(i, t)+
+	\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq y^*\& w\neq i}^{\infty}
+	L^{(i-w)}_{\tilde{\nu}, y^*}(w)P_{\tilde{\nu}}(w, t) + o(1).
+\end{urv}

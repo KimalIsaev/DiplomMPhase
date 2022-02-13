@@ -1,0 +1,54 @@
+При соблюдени условий \eqref{uslovie_vtorogo_uravnenia} cделаем замены:
+\begin{equation}\label{first_changes}
+	\eta=\varepsilon ,\tau=t\varepsilon, u=\varepsilon w, \boldsymbol{H}(u,t)=\boldsymbol{F}(w,\tau, \varepsilon),
+\end{equation}
+\begin{equation}\label{first_changes2}
+	\boldsymbol{A}=\boldsymbol{C}_{0,0}-\boldsymbol{D}_0, \boldsymbol{B}=\boldsymbol{C}_{1,0}.
+\end{equation}
+
+Тогда мы можем переписать уравнение \eqref{pervoe_uravnenie_partial}:
+\begin{equation}\label{pervoe_partial_epsilon}
+\varepsilon \pdv{\boldsymbol{F}(w,\tau,\varepsilon)}{\tau} =
+\boldsymbol{F}(w,\tau,\varepsilon)\bigg[\boldsymbol{A} + e^{j\varepsilon w}\boldsymbol{B}\bigg]
+-j\pdv{\boldsymbol{F}(w,\tau,\varepsilon)}{w}\bigg[e^{-j\varepsilon w}\boldsymbol{K} - \boldsymbol{L}\bigg].
+\end{equation}
+
+Теорема 1.3.
+Если 
+\begin{equation}\begin{aligned}\label{uslovie_tretiego_uravnenia}
+	1.&\text{Выполняеются условия \eqref{uslovie_vtorogo_uravnenia}}.\\
+	2.&Rank(\boldsymbol{S}) = |\mathbb{J}|, \text{где}\\
+	&\boldsymbol{S} = \bigg[ \boldsymbol{A} + \boldsymbol{B} +x(\tau)(\boldsymbol{K}-\boldsymbol{I}), \boldsymbol{e} \bigg],\\
+	&\boldsymbol{u}= \bigg[ 0^T, 1 \bigg].\\
+	3.&\exists \lim_{\varepsilon\to 0} \boldsymbol{F}(w,\tau,\varepsilon).
+\end{aligned}\end{equation}
+То \(\boldsymbol{r} = \boldsymbol{u}\boldsymbol{S}^T(\boldsymbol{S}\boldsymbol{S}^T)^{-1}\), где \(\boldsymbol{r}\)
+- это стационарное распределение вероятностей состояний системы массового обслуживания без учёта орбиты.
+То есть \(\forall k \in [1, |\mathbb{J}|] \subset \mathbb{Z}\):
+\[\boldsymbol{r}_k = \lim_{t \to \infty} \sum_{i=0}^{\infty} P_{\tilde{k}}(i,t).\]
+
+\textbf{Доказательство.}  
+\[\lim_{\varepsilon\to 0} \boldsymbol{F}(w,\tau,\varepsilon)=\boldsymbol{F}(w,\tau)\]
+и из уравнения \eqref{pervoe_partial_epsilon} получим
+\[\boldsymbol{F}(w,\tau)(\boldsymbol{A} + \boldsymbol{B})
+-j\frac{\boldsymbol{F}(w,\tau)}{\partial w}(\boldsymbol{K}-\boldsymbol{I})=0.\]
+Находим решение уравнения \eqref{vtoroe__uravnenie} в виде $\boldsymbol{F}(w,\tau)=\boldsymbol{r}e^{jwx(\tau)}$. 
+Получим следующую систему:\\
+\begin{align}\label{r}
+	\boldsymbol{r}((\boldsymbol{A} + \boldsymbol{B} +x(\tau)(\boldsymbol{K}-\boldsymbol{I}))=\boldsymbol{0^T},
+\end{align}
+\[\boldsymbol{r}\boldsymbol{e}= 1.\]
+Преобразуем в матричное уравнение:
+\[\boldsymbol{r}\boldsymbol{S} = \boldsymbol{u}.\]	
+Это уравения можно решить использую псевдообратную матрицу, так как у матрицы $\boldsymbol{S}$ линейно независимы строки
+\[\boldsymbol{r} = \boldsymbol{u}\boldsymbol{S}^+.\]
+Где заменяя \(\boldsymbol{S}^+\) на формулу для правой обратной матрицы мы получаем утверждение теоремы.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+В системе уравнений \eqref{HFirstEquationParticular} и \eqref{HSecondEquationParticular}
+сделаем замену:
+\begin{equation}
+    \Hn(u,t) = e^{j \frac{u}{\sigma} x(\sigma t)}\Hln(u,t),
+\end{equation}
+
+\begin{equation*}\begin{aligned}
+\pdv{\Hln(u,t)}{t} &+ jux'(\sigma t) \Hln (u,t)= \\
+   =&-\Q{\lambda+\allExecutionFullIntensity{n}{k}}\seqStandart{H^{(1)}}{n}(u,t)+\\
+    &+j \sigma \En \pdv{\seqStandart{H^{(1)}}{n}(u,t)}{u} - \\ 
+    &-x(\sigma t) \En \seqStandart{H^{(1)}}{n}(u,t) + \\
+    &+\overline{\En} \lambda e^{ju} \seqStandart{H^{(1)}}{n}(u,t)+\\
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{H^{(1)}}{n}(u,t) + \\
+    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinus{H^{(1)}}{n}{k}(u,t) + \\
+    &-j \sigma  e^{-ju} \sum_{k=0}^{M-1}q_k \pdv{\seqMinus{H^{(1)}}{n}{k}(u,t)}{u} + \\
+    &+x(\sigma t)  e^{-ju} \sum_{k=0}^{M-1}q_k \seqMinus{H^{(1)}}{n}{k}(u,t) + \\
+    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{H^{(1)}}{n}{f}(u,t) + \\
+    &+\En r_2 e^{ju} \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{H^{(1)}}{n}{f}(u,t) + \\
+    &+r_1 \feedbackSum{f}{k}
+        q_k \mu_f (n_f+1) \seqMinusPlus{H^{(1)}}{n}{k}{f}(u,t),
+\end{aligned}\end{equation*}
+
+\begin{equation*}\begin{aligned} 
+\nJ \Bigg[ \pdv{\Hln(u,t)}{t} & + jux'(\sigma t) \Hln (u,t) \Bigg] = \\
+=(e^{ju} - 1)
+\Bigg\{
+    &\lambda \nI \seqStandart{H^{(1)}}{n}(u,t)+\\
+    &+j\sigma e^{-ju} \nG\pdv{\seqStandart{H^{(1)}}{n}(u,t)}{u} + \\
+    &-x(\sigma t) e^{-ju} \nG \seqStandart{H^{(1)}}{n}(u,t) + \\
+    &+r_2\sum_{f=0}^{M-1} \mu_f \nJ n_f \seqStandart{H^{(1)}}{n}(u,t)
+\Bigg\}
+.
+\end{aligned}\end{equation*}
+
+С учётом \eqref{aDefinition}:
+\begin{equation*}\begin{aligned}
+\pdv{\Hln(u,t)}{t} &+ jua(x) \Hln (u,t)= \\
+   =&-\Q{\lambda+\allExecutionFullIntensity{n}{k}}\seqStandart{H^{(1)}}{n}(u,t)+\\
+    &+j \sigma \En \pdv{\seqStandart{H^{(1)}}{n}(u,t)}{u} - \\ 
+    &-x \En \seqStandart{H^{(1)}}{n}(u,t) + \\
+    &+\overline{\En} \lambda e^{ju} \seqStandart{H^{(1)}}{n}(u,t)+\\
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{H^{(1)}}{n}(u,t) + \\
+    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinus{H^{(1)}}{n}{k}(u,t) + \\
+    &-j \sigma  e^{-ju} \sum_{k=0}^{M-1}q_k \pdv{\seqMinus{H^{(1)}}{n}{k}(u,t)}{u} + \\
+    &+x  e^{-ju} \sum_{k=0}^{M-1}q_k \seqMinus{H^{(1)}}{n}{k}(u,t) + \\
+    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{H^{(1)}}{n}{f}(u,t) + \\
+    &+\En r_2 e^{ju} \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{H^{(1)}}{n}{f}(u,t) + \\
+    &+r_1 \feedbackSum{f}{k}
+        q_k \mu_f (n_f+1) \seqMinusPlus{H^{(1)}}{n}{k}{f}(u,t),
+\end{aligned}\end{equation*}
+
+\begin{equation*}\begin{aligned} 
+\nJ \Bigg[ \pdv{\Hln(u,t)}{t} & + jua(x) \Hln (u,t) \Bigg] = \\
+=(e^{ju} - 1)
+\Bigg\{
+    &\lambda \nI \seqStandart{H^{(1)}}{n}(u,t)+\\
+    &+j\sigma e^{-ju} \nG\pdv{\seqStandart{H^{(1)}}{n}(u,t)}{u} + \\
+    &-x e^{-ju} \nG \seqStandart{H^{(1)}}{n}(u,t) + \\
+    &+r_2\sum_{f=0}^{M-1} \mu_f \nJ n_f \seqStandart{H^{(1)}}{n}(u,t)
+\Bigg\}
+.
+\end{aligned}\end{equation*}
+
+
+

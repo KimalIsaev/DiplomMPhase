@@ -1,0 +1,157 @@
+\documentclass[a4paper, 12pt]{article}
+%\usepackage[OT2, T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{minted}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[unicode, pdftex]{hyperref}
+\usepackage[russian, english]{babel}
+\usepackage{comment}
+\usepackage{subfiles}
+\usepackage{pxfonts}
+\usepackage{environ}
+\usepackage{changepage}
+\usepackage{physics}
+
+\newcommand{\Q}[1]{\left( {#1} \right)}
+\newcommand{\T}[1]{\left[ {#1} \right]}
+\newcommand{\N}[1]{\left\{ {#1} \right\}}
+
+\newcommand{\Jt}{\mathbb{J}}
+\newcommand{\It}{\mathbb{I}}
+\newcommand{\Gt}{\mathbb{G}}
+\newcommand{\Zt}{\mathbb{Z}}
+\newcommand{\Mt}{[0,M)\subset\Zt}
+\newcommand{\Nt}{[0,N]\subset\Zt}
+
+\newcommand{\Pn}{{P}_{\bar{n}}}
+\newcommand{\Hn}{{H}_{\bar{n}}}
+\newcommand{\Hln}{{H}^{(1)}_{\bar{n}}}
+\newcommand{\Fln}{{F}^{(1)}_{\bar{n}}}
+\newcommand{\Fn}{{F}_{\bar{n}}}
+\newcommand{\gn}{{g}_{\bar{n}}}
+\newcommand{\pn}{{\varphi}_{\bar{n}}}
+\newcommand{\En}{E_{\bar{n}}}
+\newcommand{\Ln}{L_{\bar{n}}}
+\newcommand{\Rn}{R_{\bar{n}}}
+\newcommand{\Lk}{L_{\bar{k}}}
+\newcommand{\Rk}{R_{\bar{k}}}
+\newcommand{\Lm}{L_{\bar{m}}}
+\newcommand{\Rm}{R_{\bar{m}}}
+
+\newcommand{\nJ}{\sum_{\bar{n}}^{\Jt}}
+\newcommand{\nG}{\sum_{\bar{n}}^{\Gt}}
+\newcommand{\nI}{\sum_{\bar{n}}^{\It}}
+
+\newcommand{\dt}{
+    \Delta t
+}
+\newcommand{\lx}{
+    \lambda + x
+}
+\newcommand{\lxt}{
+    \lambda + x(\tau)
+}
+\newcommand{\ls}{
+    \lambda + i\sigma
+}
+\newcommand{\les}{
+    \lambda + \En i \sigma
+}
+\newcommand{\LunityBase}{
+    \frac{\lxt}{1-r_1}
+}
+\newcommand{\Lunity}[1]{
+    \Q{\LunityBase}^{#1}
+}
+\newcommand{\LunityStandart}[2]{
+    \Lunity{
+        \sum_{#2=0}^{M-1}{#1}_{#2}
+    }
+}
+\newcommand{\executionAbsoluteIntensity}[1]{
+    \frac{\mu_{#1}}{q_{#1}}
+}
+\newcommand{\executionAbsoluteReverseIntensity}[1]{
+    \frac{q_{#1}}{\mu_{#1}}
+}
+\newcommand{\LuniqueBase}[2]{
+        \frac{1}{{#1}_{#2}!}
+        \Q{\executionAbsoluteReverseIntensity{#2}}^{{#1}_{#2}}
+}
+\newcommand{\LuniqueStandart}[2]{
+    \prod_{{#2}=0}^{M-1}
+    \LuniqueBase{#1}{#2}
+}
+
+\newcommand{\Ldefinition}[2]{
+    \LunityStandart{#1}{#2}
+    \LuniqueStandart{#1}{#2}
+}
+\newcommand{\LminusDefinition}[3]{
+    \Lunity{\sum_{#2=0}^{M-1}{#1}_{#2} - 1}
+    \T{\prod_{{#2}=0}^{M-1}\LuniqueBase{#1}{#2}}
+    \Q{{#1}_{#3}\executionAbsoluteIntensity{{#3}}}
+}
+\newcommand{\seqStandart}[2]{
+    {#1}_{{#2}_0, {#2}_1, ... {#2}_{M-1}}
+}
+\newcommand{\seqMinus}[3]{
+    {#1}_{{#2}_0, {#2}_1, ... , {#2}_{#3} - 1,  ... {#2}_{M-1}}
+}
+\newcommand{\seqPlus}[3]{
+    {#1}_{{#2}_0, {#2}_1, ... , {#2}_{#3} + 1,  ... {#2}_{M-1}}
+}
+\newcommand{\seqMinusPlus}[4]{
+    {#1}_{{#2}_0, {#2}_1, ... , {#2}_{#3} - 1, ... , 
+        {#2}_{#4} + 1, ... {#2}_{M-1}}
+}
+\newcommand{\allExecutionFullIntensity}[2]{
+    \sum_{{#2}=0}^{M-1}\mu_{#2}{#1}_{#2}
+}
+\newcommand{\allExecutionRelativeIntensity}[2]{
+    \sum_{{#2}=0}^{M-1} q_{#2}\mu_{#2}{#1}_{#2} 
+}
+\newcommand{\feedbackSum}[2]{
+    \sum_{{#1}=0}^{M-1} \sum_{{#2}=0, {#2} \neq {#1}}^{M-1}
+}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\NewEnviron{urv}[1]{\begin{adjustwidth}{-#1pt}{0pt}\begin{align*} \BODY \end{align*}\end{adjustwidth}}
+\begin{document}
+    \subfile{norm}\\\\
+    \newpage
+    \subfile{conditions}
+    \newpage
+    \subfile{kolmogorov_before_differential}
+    \newpage
+    \subfile{kolmogorov_differential}
+    \subfile{kolmogorov_after_differential}
+    \subfile{summa_na_edinich_nol}
+    \newpage
+    \subfile{pre_partial_case}
+    \newpage
+    \subfile{stationary_probability_theorem}
+    \newpage
+    \subfile{a}
+    \newpage
+    \subfile{theorem14_description}
+    \subfile{theorem14_proof}
+    \newpage
+    \subfile{usl}
+    \newpage
+	\subfile{library_code}
+    \newpage
+	\subfile{example_code}
+    %\subfile{introduce_set_v.tex}
+    \newpage
+    \subfile{sets_in_particular}
+    \subfile{P_equation_in_particular}
+    \subfile{H_equation_in_particular}
+    \subfile{F_equation_in_particular_description}
+    \subfile{F_equation_in_particular_proof}
+    \subfile{suppose_L_in_particular}
+    \subfile{L_equation_in_particular}
+    \subfile{x_equation_in_particular}
+    \subfile{proof_for_proof}
+\end{document}

@@ -1,0 +1,47 @@
+Для данных вероятностей составим систему уравнений в конечных разностях. 
+если \(n_k\)-ое отрицательное \(P_{\bar{n}} = 0\),
+это является возможным так как условие 3 Теоремы 1.1 выполняется: 
+\begin{equation*}\begin{aligned}   
+\seqStandart{P}{n}(i,t+\dt)= 
+    &\Q{1-\Delta t\Q{\les+\allExecutionFullIntensity{n}{k}}}
+        \seqStandart{P}{n}(i,t)+\\
+    &+\dt \overline{\En} \lambda \seqStandart{P}{n}(i-1,t)+\\
+    &+\dt r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{P}{n}(i,t) + \\
+    &+\dt \lambda\sum_{k=0}^{M-1}q_k \seqMinus{P}{n}{k}(i,t) + \\
+    &+\dt (i+1)\sigma\sum_{k=0}^{M-1}q_k \seqMinus{P}{n}{k}(i+1,t) + \\
+    &+\dt \En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i,t) + \\
+    &+\dt \En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i-1,t) + \\
+    &+\dt r_1 \feedbackSum{f}{k}
+        q_k \mu_f (n_f+1) \seqMinusPlus{P}{n}{k}{f}(i,t) + \\
+    &+o(\dt).
+\end{aligned}\end{equation*}
+
+Раскроем скобки, разделим на каждое уравнение на \(\dt\), получим:
+\begin{equation*}\begin{aligned}
+\frac{\seqStandart{P}{n}(i,t+\dt)-\seqStandart{P}{n}(i,t)}{\dt}= 
+    &-\Q{\les+\allExecutionFullIntensity{n}{k}}\seqStandart{P}{n}(i,t)+\\
+    &+\overline{\En} \lambda \seqStandart{P}{n}(i-1,t)+\\
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{P}{n}(i,t) + \\
+    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinus{P}{n}{k}(i,t) + \\
+    &+(i+1)\sigma\sum_{k=0}^{M-1}q_k \seqMinus{P}{n}{k}(i+1,t) + \\
+    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i,t) + \\
+    &+\En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i-1,t) + \\
+    &+r_1 \feedbackSum{f}{k}
+        q_k \mu_f (n_f+1) \seqMinusPlus{P}{n}{k}{f}(i,t) + \\
+    &+\frac{o(\dt)}{\dt}.
+\end{aligned}\end{equation*}
+
+Устремим \(\dt \rightarrow 0\), получим:
+\begin{equation*}\begin{aligned}
+\dv{\seqStandart{P}{n}(i,t)}{t}= 
+    &-\Q{\les+\allExecutionFullIntensity{n}{k}}\seqStandart{P}{n}(i,t)+\\
+    &+\overline{\En} \lambda \seqStandart{P}{n}(i-1,t)+\\
+    &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{P}{n}(i,t) + \\
+    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinus{P}{n}{k}(i,t) + \\
+    &+(i+1)\sigma\sum_{k=0}^{M-1}q_k \seqMinus{P}{n}{k}(i+1,t) + \\
+    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i,t) + \\
+    &+\En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i-1,t) + \\
+    &+r_1 \feedbackSum{f}{k}
+        q_k \mu_f (n_f+1) \seqMinusPlus{P}{n}{k}{f}(i,t).
+\end{aligned}\end{equation*}
+

@@ -1,0 +1,28 @@
+Рассмотрим \eqref{FSecondEquationParticular} при \(\varepsilon \rightarrow 0\):
+\begin{equation}\begin{aligned}
+\nJ \pdv{\Fn(w,\tau)}{\tau}=jw
+\Bigg\{
+    &\lambda \nI \seqStandart{F}{n}(w,\tau)+\\
+    &+j \nG\pdv{\seqStandart{F}{n}(w,\tau)}{w} + \\
+    &+r_2\sum_{f=0}^{M-1} \mu_f \nJ n_f \seqStandart{F}{n}(w,\tau)
+\Bigg\}
+.
+\end{aligned}\end{equation}
+Подставим \(\Fn = \Rn e^{jwx(\tau)}\) и приведём подобные:
+\begin{equation}\begin{aligned}
+x'(\tau)= 
+    \lambda \nI \Rn
+    -x(\tau) \nG \Rn 
+    +r_2\sum_{f=0}^{M-1} \mu_f \nJ n_f \Rn.
+\end{aligned}\end{equation}
+Среднее количество заявок на орбите определяется формулой:
+\[\kappa = 
+    \frac{\lambda \nI \Rn +r_2\sum_{f=0}^{M-1} \mu_f \nJ n_f \Rn }
+    {\nG \Rn}\]
+Обозначим:
+\begin{equation}\begin{aligned} \label{aDefinition}
+x'(\tau) = a(x) = 
+    \lambda \nI \Rn
+    -x(\tau) \nG \Rn 
+    +r_2\sum_{f=0}^{M-1} \mu_f \nJ n_f \Rn.
+\end{aligned}\end{equation}

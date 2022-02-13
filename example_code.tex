@@ -1,0 +1,177 @@
+Подключаем необходимые библиотеки, ставим печать
+с помощью ASCI символов для более удобного чтения
+полученных файлов в будущемЖ
+\begin{minted}{Python}
+import itertools
+from lib import algorithm
+from sympy import *
+from pathlib import Path
+from operator import mul
+from math import factorial
+from functools import reduce
+import sys
+init_printing(use_unicode=False)
+\end{minted}
+
+Определяем функцию, которая выдаёт функцию, что
+возращает логическую единицу, только тогда, когда
+сумма элементов меньше чем значение переданное в изначальную
+функцию: 
+\begin{minted}{Python}
+def sum_checker(M):
+    def f(v):
+        return (sum(v) < M)
+    return f
+\end{minted}
+
+Эта функция возращает множество \(\Jt\), принимая
+количиство элементов в элементе \(\Jt\),
+максимум в элементе вектора принадлежащего \(\Jt\) плюс один,
+и функцию, что определяет что входит в множество \(\Jt\):
+\begin{minted}{Python}
+def check_all_states(N, M, f):
+    return [v for v in itertools.product(range(M), repeat=N) if f(v)]
+\end{minted}
+
+Функция, что выдаёт все состояния системы массового обслуживания
+для N приборов и M-1 фаз:
+\begin{minted}{Python}
+def states_for_phase_execution(N, M):
+    return check_all_states(N, M, sum_checker(M))
+\end{minted}
+
+Функция для создания функции циферной нумеровки:
+\begin{minted}{Python}
+def create_my_numerate(M):
+    def my_norm(x):
+        return sum([k*M**i for i, k in enumerate(x)])
+    return my_norm
+\end{minted}
+
+Функция, что выдаёт все состояния системы массового обслуживания
+для N приборов и M фаз, отсортированные в нужном порядке,
+используя циферную функцию нумеровки.
+\begin{minted}{Python}
+def get_list_of_states(N, M):
+    return sorted(states_for_phase_execution(N, M+1),
+        key=create_my_numerate(M+1))
+\end{minted}
+
+Функция создающая функцию, что отдаёт на
+каком элементе вектора первый вектор больше второго
+на единицу и/или меньше его, или же равенство онных.
+\begin{minted}{Python}
+def create_ordinar_difference_of_vector(N):
+    def f(z, y):
+        i_minus = N
+        i_plus = N
+        for i, (m, k) in enumerate(zip(z, y)):
+            diff = m - k
+            if abs(diff) > 1:
+                return (N, N), False
+            if diff == 1:
+                if i_plus == N:
+                    i_plus = i
+                else:
+                    return (N, N), False
+            if diff == -1:
+                if i_minus == N:
+                    i_minus = i
+                else:
+                    return (N, N), False
+        return (i_minus, i_plus), True
+    return f
+\end{minted}
+
+Функция создающая функцию, что отдаёт 
+локальные аргументы для вычисления матриц.
+\begin{minted}{Python}
+def create_phase_execution_local_arg_maker(N):
+    diff_f = create_ordinar_difference_of_vector(N)
+
+    def create_local_arg(q, y, z, const_arg):
+        (i_minus, i_plus), check = diff_f(z, y)
+        no_minus = (i_minus == N)
+        no_plus = (i_plus == N)
+        is_minus = not no_minus
+        is_plus = not no_plus
+        no_change = (q == 0)
+        plus_change = (q == 1)
+        minus_change = (q == -1)
+        arg = {'i_minus': i_minus, 'i_plus': i_plus,
+               'no_minus': no_minus, 'no_plus': no_plus,
+               'is_minus': is_minus, 'is_plus': is_plus,
+               'check': check, 'no_change': no_change,
+               'plus_change': plus_change,
+               'minus_change': minus_change}
+        return arg
+
+    return create_local_arg
+\end{minted}
+
+\begin{minted}{Python}
+def create_phase_execution_LFL(M):
+    def poiss_checker(q, y, z, const_arg, arg):
+        right_state_change = arg['no_minus'] and arg['is_plus']
+        return arg['check'] and arg['no_change'] and right_state_change
+
+    def poiss(q, y, z, const_arg, arg):
+        qk = const_arg['q'][arg['i_plus']]
+        lam = const_arg['lam']
+        return lam*qk
+
+    def out_orbit_checker(q, y, z, const_arg, arg):
+        right_state_change = arg['no_minus'] and arg['is_plus']
+        return arg['check'] and arg['minus_change'] and right_state_change
+
+    def out_orbit(q, y, z, const_arg, arg):
+        return 0
+
+    def out_orbit_(q, y, z, const_arg, arg):
+        qk = const_arg['q'][arg['i_plus']]
+        sigma = const_arg['sigma']
+        return sigma*qk
+
+    def in_orbit_checker(q, y, z, const_arg, arg):
+        right_state_change = arg['is_minus'] and arg['no_plus']
+        return arg['check'] and arg['plus_change'] and right_state_change
+
+    def in_orbit(q, y, z, const_arg, arg):
+        k = arg['i_minus']
+        uk = const_arg['u'][k]
+        r2 = const_arg['r2']
+        return y[k]*uk*r2
+
+    def in_orbit_full_checker(q, y, z, const_arg, arg):
+        right_state = arg['no_minus'] and arg['no_plus'] and (sum(y) == M)
+        return arg['check'] and arg['plus_change'] and right_state
+    def in_orbit_full(q, y, z, const_arg, arg):
+        return const_arg['lam']
+
+    def exit_checker(q, y, z, const_arg, arg):
+        right_state_change = arg['is_minus'] and arg['no_plus']
+        return arg['check'] and arg['no_change'] and right_state_change
+
+    def exit_zero(q, y, z, arg_dict, temp_arg_dict):
+        k = temp_arg_dict['i_minus']
+        uk = arg_dict['u'][k]
+        r0 = arg_dict['r0']
+        return y[k]*uk*r0
+
+    def again_checker(q, y, z, const_arg, arg):
+        right_state_change = arg['is_minus'] and arg['is_plus']
+        return arg['check'] and arg['no_change'] and right_state_change
+
+    def again(q, y, z, const_arg, arg):
+        k = arg['i_minus']
+        uk = const_arg['u'][k]
+        r1 = const_arg['r1']
+        return y[k]*uk*r1*const_arg['q'][arg['i_plus']]
+
+    return [[poiss_checker, poiss], [out_orbit_checker, out_orbit, out_orbit_],
+            [exit_checker, exit_zero], [in_orbit_full_checker, in_orbit_full],
+            [in_orbit_checker, in_orbit], [again_checker, again]]
+\end{minted}
+
+
+

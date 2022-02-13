@@ -1,0 +1,236 @@
+
+
+Доказательство:
+Вместе с подстановками \eqref{first_changes2}, при соблюдении \eqref{uslovie_vtorogo_uravnenia}, сделаем следующую подстановку в \eqref{pervoe_uravnenie_partial} и \eqref{vtoroe__uravnenie}
+
+\[\boldsymbol{H}(u,t) = e^{j\frac{u}{\eta}x(\eta t)}\boldsymbol{H}^{(1)}(u,t)\]
+
+\begin{align*}
+    \pdv{\boldsymbol{H}^{(1)}(u,t)}{t} &+ jux'(\eta t)\boldsymbol{H}^{(1)}(u,t) = \\
+    &\boldsymbol{H}^{(1)}(u,t)(\boldsymbol{A}+e^{ju}\boldsymbol{B})
+    -j\eta \bigg[ \frac{j}{\eta} x(\eta t)\boldsymbol{H}^{(1)}(u,t)
+    + \pdv{\boldsymbol{H}^{(1)}(u,t)}{t}\bigg](e^{-ju}\boldsymbol{K}-\boldsymbol{I}), 
+\end{align*}
+
+\begin{align*}
+	\bigg[\pdv{\boldsymbol{H}^{(1)}(u,t)}{t} 
+        &+ jux'(\eta t)\boldsymbol{H}^{(1)}(u,t) \bigg]  \boldsymbol{e}=\\
+	&(e^{ju}-1)
+    \Q{\boldsymbol{H}^{(1)}(u,t)\boldsymbol{B}
+        +j\eta e^{-ju} \T{
+            \frac{j}{\eta} x(\eta t)\boldsymbol{H}^{(1)}(u,t)
+            + \pdv{\boldsymbol{H}^{(1)}(u,t)}{t}}
+        \boldsymbol{I}}
+    \boldsymbol{e}.
+\end{align*}
+
+Перепишем с учетом \eqref{a(x)}:	
+\begin{align*}
+\pdv{\boldsymbol{H}^{(1)}(u,t)}{t} &+ jua(x)\boldsymbol{H}^{(1)}(u,t) = \\
+	&\boldsymbol{H}^{(1)}(u,t)
+    \Q{\boldsymbol{A}+e^{ju}\boldsymbol{B}+x(e^{-j u}\boldsymbol{K}- \boldsymbol{I})}
+    -j\eta \pdv{\boldsymbol{H}^{(1)}(u,t)}{u}
+        \Q{e^{-j u}\boldsymbol{K}- \boldsymbol{I}},
+\end{align*}
+
+\begin{align*}
+	\bigg[\pdv{\boldsymbol{H}^{(1)}(u,t)}{t}\boldsymbol{e} &+ jua(x)\boldsymbol{H}^{(1)}(u,t) \bigg]  
+    \boldsymbol{e}=\\
+	&(e^{ju}-1)\bigg(\boldsymbol{H}^{(1)}(u,t)[\boldsymbol{B}-e^{j u}x\boldsymbol{I}]
+	+j\eta e^{-ju} \pdv{\boldsymbol{H}^{(1)}(u,t)}{u}\boldsymbol{I}\bigg)\boldsymbol{e}.
+\end{align*}
+
+Обозначим \(\eta = \varepsilon^2\) и сделаем следующие замены:
+\[ \tau = t \varepsilon^2 , u = \varepsilon w, \boldsymbol{H}^{(1)}(u,t) = \boldsymbol{F}^{(1)}(w, \tau , \varepsilon).\]
+
+Мы можем написать 
+
+\begin{align*}
+	\varepsilon ^2 \pdv{\boldsymbol{F}^{(1)}(w, \tau , \varepsilon)}{\tau} &+ j\varepsilon w a(x)\boldsymbol{F}^{(1)}(w, \tau , \varepsilon) =\\
+	&\boldsymbol{F}^{(1)}(w, \tau , \varepsilon)(\boldsymbol{A}+e^{j\varepsilon w}\boldsymbol{B}+x(e^{-j \varepsilon w}\boldsymbol{K}- \boldsymbol{I}))
+	-j\varepsilon \pdv{\boldsymbol{F}^{(1)}(w, \tau , \varepsilon)}{w}(e^{-j \varepsilon w}\boldsymbol{K}- \boldsymbol{I}),
+\end{align*}
+
+\begin{align*}
+	\bigg[ \varepsilon ^2 \pdv{\boldsymbol{F}^{(1)}(w, \tau , \varepsilon)}{\tau} &+ j\varepsilon wa(x)\boldsymbol{F}^{(1)}(w, \tau , \varepsilon) \bigg]  \boldsymbol{e}=\\
+	&(e^{j \varepsilon w}-1)\bigg(\boldsymbol{F}^{(1)}(w, \tau , \varepsilon)[\boldsymbol{B}-e^{j \varepsilon w}x\boldsymbol{I}]
+	+j\varepsilon e^{-j\varepsilon w} \pdv{\boldsymbol{F}^{(1)}(w, \tau , \varepsilon)}{w}\boldsymbol{I}\bigg)\boldsymbol{e}.
+\end{align*}
+
+Запишем первое уравнение с точностью до $O(\varepsilon^2)$:
+
+\begin{equation}\begin{aligned}\label{one_with_tochost}
+		j\varepsilon wa(x) &\boldsymbol{F}^{(1)}(w, \tau , \varepsilon) = \\
+		&=\boldsymbol{F}^{(1)}(w, \tau , \varepsilon)[\boldsymbol{A}+\boldsymbol{B}+j\varepsilon w\boldsymbol{B}+x(\boldsymbol{K} - j \varepsilon w\boldsymbol{K}- \boldsymbol{I})]-\\
+		&\hspace{20pt}-j\varepsilon \pdv{\boldsymbol{F}^{(1)}(w, \tau , \varepsilon)}{w}(\boldsymbol{K}- \boldsymbol{I}) + O(\varepsilon ^2),
+\end{aligned}\end{equation}
+
+а второе уравнение с точностью до $O(\varepsilon^3)$:
+
+\begin{equation}\begin{aligned}\label{two_with_tochost}
+		\bigg[ \varepsilon ^2 &\pdv{\boldsymbol{F}^{(1)}(w, \tau , \varepsilon)}{\tau} 
+            + j \varepsilon ua(x)\boldsymbol{F}^{(1)}(w, \tau , \varepsilon) \bigg]  
+        \boldsymbol{e}= \\
+        &\Bigg(j\varepsilon w  + \frac{(j\varepsilon w)^2}{2}\Bigg)\bigg( 
+            \boldsymbol{F}^{(1)}(w, \tau , \varepsilon)[\boldsymbol{B}-(1-j \varepsilon w)x\boldsymbol{I}] + \\
+            &\hspace{150pt}+j \varepsilon \pdv{\boldsymbol{F}^{(1)}(w, \tau , \varepsilon)}{w}\boldsymbol{I}\bigg)\boldsymbol{e}+ \\
+        &+O(\varepsilon ^3).
+\end{aligned}\end{equation}
+
+Будем искать решение \eqref{one_with_tochost} и \eqref{two_with_tochost} в виде:
+\begin{align}\label{zamena_phi}
+	\boldsymbol{F}^{(1)}(w, \tau , \varepsilon) = \Phi (w, \tau)\{\boldsymbol{r}+j\varepsilon w \boldsymbol{g}\} 
+	-j \varepsilon \pdv{\Phi (w, \tau)}{w}\boldsymbol{\varphi} + \varepsilon C \boldsymbol{r} + O(\varepsilon ^2).
+\end{align}
+
+Где \(\Phi (w, \tau)\) - скалярная функция, форма которой определена ниже. А C- любое комплексное число. При подстановке в \eqref{one_with_tochost}
+
+\begin{align*}
+	j \varepsilon w a(x) \Phi (w, \tau) \boldsymbol{r} =& \Phi (w, \tau) \{\boldsymbol{r} + j \varepsilon w (C\boldsymbol{r}+\boldsymbol{g})\} 
+	(\boldsymbol{A}+\boldsymbol{B} + j\varepsilon w \boldsymbol{B}+x(\boldsymbol{K} - j \varepsilon w\boldsymbol{K}- \boldsymbol{I})]-\\
+	&-j\varepsilon \pdv{\Phi (w, \tau)}{w}\varphi (\boldsymbol{A}+\boldsymbol{B} + x(\boldsymbol{K}-\boldsymbol{I}))
+	-j\varepsilon \pdv{\Phi (w, \tau)}{w} \boldsymbol{r} (\boldsymbol{K} - \boldsymbol{I})+\\
+	&+\varepsilon C \boldsymbol{r} ( \boldsymbol{A}+\boldsymbol{B}+x(\boldsymbol{K}-\boldsymbol{I})) + O(\varepsilon ^2).
+\end{align*}
+
+Разделим данное уравнение на 3 различных:
+\[ 0 = \varepsilon C \boldsymbol{r}( \boldsymbol{A}+\boldsymbol{B}+x(\boldsymbol{K}-\boldsymbol{I})),\]
+\begin{align*}
+	j \varepsilon w a(x) &\Phi (w, \tau)\boldsymbol{r} = 
+    \Phi (w, \tau) \{\boldsymbol{r} + j \varepsilon w (C\boldsymbol{r}+\boldsymbol{g})\}\cdot \\ 
+	&\cdot (\boldsymbol{A}+\boldsymbol{B} + j\varepsilon w \boldsymbol{B}+
+	+x(\boldsymbol{K} - j \varepsilon w\boldsymbol{K}- \boldsymbol{I})) + O(\varepsilon ^2),
+\end{align*}
+\[ 0 = -j\varepsilon \pdv{\Phi (w, \tau)}{w}\boldsymbol{\varphi} (\boldsymbol{A}+\boldsymbol{B} + x(\boldsymbol{K}-\boldsymbol{I}))
+-j\varepsilon \pdv{\Phi (w, \tau)}{w} \boldsymbol{r} (\boldsymbol{K} - \boldsymbol{I})+ O(\varepsilon ^2).\]
+
+Тождественность передового доказательства \eqref{r}. Поделив оставшиеся уравнения на соотвуствующие функции, преобразуем их:
+\begin{align*}
+	j \varepsilon w a(x)\boldsymbol{r}=&\boldsymbol{r}(\boldsymbol{A}+\boldsymbol{B} + x(\boldsymbol{K}-\boldsymbol{I}))+j \varepsilon w \boldsymbol{r}(\boldsymbol{B}-x\boldsymbol{K})+\\
+	&+j \varepsilon w (C\boldsymbol{r}+\boldsymbol{I})(\boldsymbol{A}+\boldsymbol{B} + x(\boldsymbol{K}-\boldsymbol{I}))+ O(\varepsilon ^2),
+\end{align*}
+\[j\varepsilon\boldsymbol{\varphi}(\boldsymbol{A}+\boldsymbol{B} + x(\boldsymbol{K}-\boldsymbol{I}))+j \varepsilon w \boldsymbol{r}(\boldsymbol{B}-x\boldsymbol{K}) = -j\varepsilon\boldsymbol{r}(\boldsymbol{K}-\boldsymbol{I}) + O(\varepsilon ^2).\]
+
+С учетом \eqref{r} разделим последние уравнения на $j\varepsilon w$ и $j \varepsilon$ соответсвенно, а затем положим $\varepsilon \rightarrow 0$:
+\[\boldsymbol{g}(\boldsymbol{A}+\boldsymbol{B} + x(\boldsymbol{K}-\boldsymbol{I})) = \boldsymbol{r}(a(x)+x\boldsymbol{K}-\boldsymbol{B}),\]	
+\[\boldsymbol{\varphi}(\boldsymbol{A}+\boldsymbol{B} + x(\boldsymbol{K}-\boldsymbol{I})) = -\boldsymbol{r}(\boldsymbol{K}-\boldsymbol{I}).\]\\
+$|\boldsymbol{A}+\boldsymbol{B} + x(\boldsymbol{K}-\boldsymbol{I})|=0$, следователь уравнения не имеют единственного решения, но так как у матрицы $\boldsymbol{S}$ линейно независимы строки, то при дополнительных условиях
+\begin{align}\label{ge}
+	\boldsymbol{ge} = 0,
+\end{align}
+\begin{align}\label{fe}
+	\boldsymbol{\varphi e} = 0,
+\end{align}
+вектор-строки можно будет определить однозначно.\\
+Поэтому:
+\begin{align}
+	\boldsymbol{g}=[\boldsymbol{r}(a(x)+x\boldsymbol{K}-\boldsymbol{B}), 0]\boldsymbol{S}(\boldsymbol{S}\boldsymbol{S}^T)^{-1}.
+\end{align}
+
+А решение второго уравнения найдем дефференцируя $\eqref{r}:$\\
+\[ \dv{\boldsymbol{r}}{x}(\boldsymbol{A}+\boldsymbol{B} + x(\boldsymbol{K}-\boldsymbol{I})) + \boldsymbol{r}(\boldsymbol{K}-\boldsymbol{I}) = 0.\]
+Что при переносе второго слогаемого в правую часть соответсвует уравнению относительно $\boldsymbol{\varphi}$ из чего следует:\\
+\begin{align}\label{phi}
+	\boldsymbol{\varphi} = \dv{\boldsymbol{r}}{x}.
+\end{align}
+
+
+Теперь рассмотрим уравнение \eqref{two_with_tochost}, в которое подставляем равернство \eqref{zamena_phi}
+\begin{align*}
+	\varepsilon^2 \pdv{\Phi (w, \tau)}{\tau}\boldsymbol{re}+	j \varepsilon w a(x) \Phi (w, \tau)\{\boldsymbol{re} + j \varepsilon w \boldsymbol{ge}\}
+    + \varepsilon^2 w a(x)\pdv{\Phi (w, \tau)}{w} \boldsymbol{\varphi e}+ j\varepsilon^2 w a(x)C\boldsymbol{re} =\\
+	=\bigg(j\varepsilon w+\frac{(j\varepsilon w)^2}{2}\bigg)\bigg(\bigg[\Phi (w,\tau)\{\boldsymbol{r}
+    +j\varepsilon w\boldsymbol{g}\}-j\varepsilon \pdv{\Phi (w, \tau)}{w}\boldsymbol{\varphi}  
+    +\varepsilon C\boldsymbol{r}\bigg][\boldsymbol{B}-x\boldsymbol{I}+j\varepsilon w x \boldsymbol{I}]+ \\
+    +j\varepsilon \pdv{\Phi (w, \tau)}{w}\boldsymbol{rI}\bigg)e +O(\varepsilon^3).\hspace{140pt}
+\end{align*}
+Применяя \eqref{r}, \eqref{a(x)}, \eqref{ge}, \eqref{fe} и расскрывая скробки, получаем:
+\begin{align*}
+	&\varepsilon^2 \pdv{\Phi (w, \tau)}{\tau}+j \varepsilon w a(x) \Phi (w, \tau)+ j\varepsilon^2 w a(x)C = j\varepsilon^2 w a(x)C+\\
+	&+j \varepsilon w a(x) \Phi (w, \tau)+\frac{(j \varepsilon w)^2}{2} a(x) \Phi (w, \tau) + (j \varepsilon w)^2 x \Phi (w, \tau)\boldsymbol{rIe}+\\
+	&+(j \varepsilon w)^2 x \Phi (w, \tau)[\boldsymbol{g}\{\boldsymbol{B}-x\boldsymbol{I}\}+x\boldsymbol{rI}]\boldsymbol{e}- (j \varepsilon)^2w \pdv{\Phi (w, \tau)}{w}\boldsymbol{\varphi}[\boldsymbol{B}-x\boldsymbol{I}]\boldsymbol{e}+\\
+	&+(j \varepsilon)^2w \pdv{\Phi (w, \tau)}{w}\boldsymbol{rIe}+O(\varepsilon^3).
+\end{align*}
+Приведя подобные, получаем:
+\begin{align*}
+	\varepsilon^2\pdv{\Phi (w, \tau)}{\tau} = &- (\varepsilon w)^2 \Phi (w, \tau)
+        \bigg([\boldsymbol{g}\{\boldsymbol{B}-x\boldsymbol{I}\}-x\boldsymbol{rI}]\boldsymbol{e}+\frac{a(x)}{2}\bigg)-\\
+	&- \varepsilon^2w \pdv{\Phi (w, \tau)}{w}[\boldsymbol{rI} -\boldsymbol{\varphi}\{\boldsymbol{B}-x\boldsymbol{I}\}]\boldsymbol{e}+O(\varepsilon^3),
+\end{align*}
+разделяя ве уравнение на $\varepsilon^2$ и устремляя $\varepsilon$ к нулю, получаем:
+\begin{align*}
+	\pdv{\Phi (w, \tau)}{\tau} =w\pdv{\Phi (w, \tau)}{w}[\boldsymbol{\varphi}\{\boldsymbol{B}-x\boldsymbol{I}\}-\boldsymbol{rI}]\boldsymbol{e}- \frac{w^2}{2}\Phi (w, \tau)
+        \bigg(2[\boldsymbol{g}\{\boldsymbol{B}-x\boldsymbol{I}\}-x\boldsymbol{rI}]\boldsymbol{e}+ a(x)\bigg).
+\end{align*}
+Обозначим 
+\begin{align}
+	b(x)=2[\boldsymbol{g}\{\boldsymbol{B}-x\boldsymbol{I}\}-x\boldsymbol{rI}]\boldsymbol{e}+ a(x).
+\end{align}
+А так же продифференцируем a(x), после применяя \eqref{phi}:
+\begin{align}
+	a'(x)=\dv{\boldsymbol{r}}{x}\{\boldsymbol{B}-x\boldsymbol{I}\}-\boldsymbol{rI}=\boldsymbol{\varphi}\{\boldsymbol{B}-x\boldsymbol{I}\}-\boldsymbol{rI}.
+\end{align}
+С учетом данных обозначений перепишем уравнение:
+\begin{align} \label{diffuxionnoe_uravn}
+	\pdv{\Phi (w, \tau)}{\tau} =a'(x)w\pdv{\Phi (w, \tau)}{w}-b(x) \frac{w}{2}\Phi (w, \tau).
+\end{align}
+Уравнение \eqref{diffuxionnoe_uravn} это преобразование Фурье уравнения Фокера-Планка для плотности распределения вероятностей $P(y, \tau)$ 
+значений центрированного и нормированного количества заявок на орбите. Находя обратное преобразование Фурье от \eqref{diffuxionnoe_uravn} мы получаем
+
+\begin{align} \label{diffuxionnoe_uravn}
+	\pdv{P (y, \tau)}{\tau} =\pdv{}{y}\{a'(x)yP (y, \tau)\}+b(x) \frac{1}{2}\frac{\partial^2}{\partial y^2}\Phi (w, \tau).
+\end{align}
+
+Если мы сосавили уравнения Фокера-Планка для функций, значит это функция является плотностью распределения вероятностей для диффузионного процесса, которое мы обознаим $y(\tau)$ с коэффицентом переноса a(x) и коэфицентом диффузии b(x):
+\[dy(\tau)=a'(x)yd\tau +\sqrt{b(x)}dw(\tau).\]
+
+
+
+
+
+
+
+Рассматривая стохастический процесс нормированного числа заявок на орбите
+\begin{align}
+	z(\tau)=x(\tau)+\varepsilon y(\tau),
+\end{align}
+где $\varepsilon=\sqrt{\eta}$, мы получим  \eqref{a(x)}, тогда  $dx(\tau)=a(x)d\tau$, получим
+\begin{align}\label{bz}
+	dz(\tau)=d(x(\tau)+\varepsilon y(\tau))=(a(x)+\varepsilon ya'(x))d\tau+\varepsilon \sqrt{b(x)}dw(\tau).
+\end{align}
+Затем выполняя разложение получаем
+\begin{align*}
+	&a(z)=a(x+\varepsilon y)=a(x)+\varepsilon y a'(x)+O(\varepsilon^2),\\
+	&\varepsilon\sqrt{b(z)}=\varepsilon\sqrt{b(x+\varepsilon y)}=\varepsilon\sqrt{b(x)+O(\varepsilon)}=\sqrt{\eta b(x)}+O(\varepsilon).
+\end{align*}
+Перепишем уравнение \eqref{bz} с точностью до $O(\varepsilon^2)$:
+\begin{align}\label{newBz}
+	dz(\tau)=a(z)d\tau+\sqrt{\eta b(z)}dw(\tau).
+\end{align}
+Обозначим плотность распределения вероятностей для процесса $z(\tau)$
+\begin{align*}
+	\pi(z,\tau)=\frac{\partial P\{z(\tau)<z\}}{\partial z}.
+\end{align*}
+Так как $z(\tau)$ -- это решение стохастического дифференциального уравнения \eqref{newBz}, следовательно, процесс является диффузионным и для его плотности распределения вероятностей можем записать уравнение Фокера-Планка
+\begin{align}
+	\frac{\partial \pi (z,\tau)}{\partial \tau}=-\frac{\partial}{\partial z}\{a(z)\pi(z,\tau)\} 
+	+\frac{1}{2}\frac{\partial^2}{\partial z^2}\{\eta b(z)\pi(z,\tau)\}.
+\end{align}
+Предполагая, что существует стационарный режим, обозначим 
+\begin{align}
+	\pi (z,\tau)=\pi(z),
+\end{align}
+Перепишем уравнение Фокера-Планка для стационарного распределения вероятностей $\pi{(z)}$
+\begin{align*}
+	(a(z)\pi(z))'+\frac{\eta}{2}(b(z)\pi(z))''=0,\\
+	-a(z)\pi(z)+\frac{\eta}{2}(b(z)\pi(z))'=0.
+\end{align*}
+Решая данное дифференциальное уравнение получаем плотность распределения вероятностей $\pi{(z)}$ нормированного числа заявок на орбите
+\begin{align}
+	\pi (z)= \frac{C}{b(z)}exp\bigg\{\frac{2}{\eta} \int\limits_0^z \frac{a(x)}{b(x)}dx\bigg\}.
+\end{align} 
+После чего можем получить дискретное распределение вероятностей
+\begin{align}
+	P(i)=\pi(\eta i)/\sum\limits_{i=0}^{\infty} \pi(\eta i),
+\end{align} 
+которое будем называть диффузионной аппроксимацией дискретного распределения вероятностей количества заявок на орбите для изучаемой системы.

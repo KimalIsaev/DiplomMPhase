@@ -1,0 +1,29 @@
+Используем замены \eqref{first_changes} в уравнении \eqref{vtoroe__uravnenie}:
+\[\varepsilon \pdv{\boldsymbol{F}(w,\tau,\varepsilon)}{\tau} \boldsymbol{e} = 
+(e^{jw\varepsilon} - 1)  \bigg[\boldsymbol{F}(w,\tau,\varepsilon) \boldsymbol{B}+
+je^{-jw\varepsilon}  \pdv{\boldsymbol{F}(w,\tau,\varepsilon)}{w}\boldsymbol{I}   \bigg]\boldsymbol{e},\]
+рассмотрим уравнение в пределе $\varepsilon \rightarrow 0$.
+\[ \pdv{\boldsymbol{F}(w,\tau)}{\tau}\boldsymbol{e} = 
+\bigg[\boldsymbol{F}(w,\tau,\varepsilon)\boldsymbol{B} +
+j \pdv{\boldsymbol{F}(w,\tau,\varepsilon)}{w} \boldsymbol{I}  \bigg]\boldsymbol{e}.\]
+После заменим решение $F(w,\tau)=Re^{jwx(\tau)}$:
+\begin{align}\label{a(x)}
+	x'(\tau)=\boldsymbol{rBe}-x(\tau)\boldsymbol{rIe}=a(x).
+\end{align}
+
+\begin{comment}
+Откуда получам, что:
+\[x(\tau) = ce^{-\boldsymbol{\overline{E}KR}\tau} + \frac{\boldsymbol{\overline{E}C_{1,0}R}}{\boldsymbol{\overline{E}KR}}\]
+%\[M{}(Re^{jwx(\tau)})_{w = 0}' = jx(\tau)R \]
+\[c \in [-\frac{\boldsymbol{\overline{E}C_{1,0}R}}{\boldsymbol{\overline{E}KR}};+\infty) \subset \mathbb{R},
+\text{ потому что }\]\[\frac{x(\tau)}{\sigma}\text{- среднее количество заявок на орбите, а оно должно быть неотрицатеоьным.}\]
+Если 
+\[c \in [-\frac{\boldsymbol{\overline{E}C_{1,0}R}}{\boldsymbol{\overline{E}KR}};0] \subset \mathbb{R}, \text{ то }
+x \in [\frac{\boldsymbol{\overline{E}C_{1,0}R}}{\boldsymbol{\overline{E}KR}}-|c|;
+\frac{\boldsymbol{\overline{E}C_{1,0}R}}{\boldsymbol{\overline{E}KR}}]\subset \mathbb{R}\]
+Если
+\[c \in (0;+\infty) \subset \mathbb{R}, \text{ то }
+x \in (\frac{\boldsymbol{\overline{E}C_{1,0}R}}{\boldsymbol{\overline{E}KR}};
+\frac{\boldsymbol{\overline{E}C_{1,0}R}}{\boldsymbol{\overline{E}KR}}+c]\subset \mathbb{R}\]
+Удостоверся, что правильно решил дифференциальное уравнение.
+\end{comment}

@@ -1,0 +1,32 @@
+Предположим вид \(\Ln\), после чего докажем верность 
+данного предположения подставкой в уравнения и получением тождества, 
+где \(\Rn\) будет определяться как:
+\[\Rn = \frac{\Ln}{\sum_{\bar{m}}^{\Jt}\Lm},\]
+для соблюдения \eqref{RSumEqualsToOne}.
+
+%может стоит двоиточее внитри круглых заменить на пробел\)
+Пусть в \(\bar{n}, \forall d \in \Mt: n_d \in \Nt \), тогда:
+\begin{equation} \label{firstLDefinition}
+    \Ln = \Ldefinition{n}{d}.
+\end{equation}
+Если \(\exists! k \in \Mt \),что \(n_k=-1\), в то время как 
+    \(\forall d \neq k \in \Mt: n_d \in \Nt\), тогда:
+\begin{equation} \label{secondLDefinition}
+    \Ln = \LminusDefinition{m}{d}{k},
+\end{equation}
+где \(\forall d \neq k \in \Mt: m_d = n_d\), но \(m_k = n_k + 1 = 0\),
+следовательно в таком случае \(\Ln = 0\).
+
+Если же у нас есть лишь подозрения, что 
+\(\exists! k \in \Mt \),что \(n_k=-1\), в то время как 
+\(\forall d \neq k \in \Mt: n_d \in \Nt\), 
+и нам известно какое именно k подозревать.
+То мы все равно можем использовать \eqref{secondLDefinition} так как, 
+если \(\forall d \in \Mt: n_d \in \Nt\) и \(k \in \Mt\):
+
+\begin{equation}\begin{aligned}
+    \Ln &= \LminusDefinition{m}{d}{k} = \\
+        &= \Ldefinition{n}{d},
+\end{aligned}\end{equation}
+где \(\forall d \neq k \in \Mt: m_d = n_d\), но \(m_k = n_k + 1\).
+ 

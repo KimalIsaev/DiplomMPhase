@@ -1,0 +1,45 @@
+Теорема 1.2
+Если: 
+\begin{equation}\label{uslovie_vtorogo_uravnenia}\begin{aligned}
+	1.&\text{Выполняеются условия \eqref{condition_of_main_theorem}}.\\
+	2.&\exists \eta \in (0, +\infty) \subset \mathbb{R}.\\
+	3.&\exists \boldsymbol{K}, \eta \boldsymbol{K} = \boldsymbol{C}_{-1,1}(\eta), \text{а } K \text{ не зависит от } \eta .\\
+	4.&\text{ от } \eta \text{ не зависит ни одна другая матрица } \boldsymbol{C}_{q, k}, \text{кроме } \boldsymbol{C}_{-1,1}.\\
+	5.& \boldsymbol{C}_{1,1} \text{ и }  \boldsymbol{C}_{0,1} \text{ полностью заполнены нулями}.\\
+	6.&N=1, W=1.
+\end{aligned} \end{equation}
+
+Тогда:
+\begin{equation}\label{vtoroe__uravnenie}
+	\pdv{\boldsymbol{H}(u,t)}{t}\boldsymbol{e} =  
+	(e^{ju} - 1) \bigg[ 
+	\boldsymbol{H}(u,t)  \boldsymbol{C}_{1,0}
+	+ j\eta e^{-ju}\pdv{\boldsymbol{H}(u,t)}{u}\boldsymbol{I} \bigg]\boldsymbol{e}.
+\end{equation}
+
+Доказательство:\\
+Запишем уравнение \eqref{pervoe_uravnenie} при N=1, W=1:
+\[
+	\pdv{\boldsymbol{H}(u,t)}{t} =
+	\boldsymbol{H}(u,t)\bigg[\boldsymbol{C}_{0,0} + e^{ju}\boldsymbol{C}_{1,0} - \boldsymbol{D}_{0}\bigg]	
+	-j\pdv{\boldsymbol{H}(u,t)}{u}\bigg[e^{-ju}\boldsymbol{C}_{-1,1} - \boldsymbol{D}_1\bigg].
+\]
+Заменим \(\boldsymbol{C}_{-1,1}\) на \(\eta \boldsymbol{K}\) и \(\boldsymbol{D}_{1}\) на \(\eta \boldsymbol{I}\):
+\begin{equation}\label{pervoe_uravnenie_partial}
+	\pdv{\boldsymbol{H}(u,t)}{t} =
+	\boldsymbol{H}(u,t)\bigg[\boldsymbol{C}_{0,0} + e^{ju}\boldsymbol{C}_{1,0} - \boldsymbol{D}_{0}\bigg]	
+	-j\eta\pdv{\boldsymbol{H}(u,t)}{u}\bigg[e^{-ju}\boldsymbol{K} - \boldsymbol{I}\bigg].
+\end{equation}
+Прибавим и вычтем матрицы \(\boldsymbol{K}\) и \(\boldsymbol{C}_{1,0}\) внутри соответствующих множителей:
+\begin{align*}
+	\pdv{\boldsymbol{H}(u,t)}{t} =
+	&\boldsymbol{H}(u,t)\bigg[ (e^{ju}-1)\boldsymbol{C}_{1,0} + \bigg( \boldsymbol{C}_{0,0} + \boldsymbol{C}_{1,0} - \boldsymbol{D}_{0} \bigg) \bigg] \\
+	&-j\eta  \pdv{\boldsymbol{H}(u,t)}{u} \bigg[e^{-ju}\bigg( \boldsymbol{K} - \boldsymbol{I} \bigg) + (e^{-ju} - 1)\boldsymbol{I} \bigg].
+\end{align*}
+Домножаем на \(\boldsymbol{e}\) с левой стороны и используем \eqref{summa_na_edinich_nol}:
+\[
+\pdv{\boldsymbol{H}(u,t)}{t}\boldsymbol{e} =
+ (e^{ju}-1)\boldsymbol{H}(u,t)\boldsymbol{C}_{1,0}\boldsymbol{e}
+-j \eta (e^{-ju} - 1)\pdv{\boldsymbol{H}(u,t)}{u}\boldsymbol{I}  \boldsymbol{e}.
+\]
+Вынося \((e^{ju}-1)\boldsymbol{e}\) как общий множитель получаем утверждение теоремы.
