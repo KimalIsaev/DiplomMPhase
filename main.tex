@@ -14,6 +14,9 @@
 \usepackage{changepage}
 \usepackage{physics}
 
+\DeclareSymbolFont{matha}{OML}{txmi}{m}{it}
+\DeclareMathSymbol{\varv}{\mathord}{matha}{118}
+
 \newcommand{\Q}[1]{\left( {#1} \right)}
 \newcommand{\T}[1]{\left[ {#1} \right]}
 \newcommand{\N}[1]{\left\{ {#1} \right\}}
@@ -25,24 +28,24 @@
 \newcommand{\Mt}{[0,M)\subset\Zt}
 \newcommand{\Nt}{[0,N]\subset\Zt}
 
-\newcommand{\Pn}{{P}_{\bar{n}}}
-\newcommand{\Hn}{{H}_{\bar{n}}}
-\newcommand{\Hln}{{H}^{(1)}_{\bar{n}}}
-\newcommand{\Fln}{{F}^{(1)}_{\bar{n}}}
-\newcommand{\Fn}{{F}_{\bar{n}}}
-\newcommand{\gn}{{g}_{\bar{n}}}
-\newcommand{\pn}{{\varphi}_{\bar{n}}}
-\newcommand{\En}{E_{\bar{n}}}
-\newcommand{\Ln}{L_{\bar{n}}}
-\newcommand{\Rn}{R_{\bar{n}}}
-\newcommand{\Lk}{L_{\bar{k}}}
-\newcommand{\Rk}{R_{\bar{k}}}
-\newcommand{\Lm}{L_{\bar{m}}}
-\newcommand{\Rm}{R_{\bar{m}}}
+\newcommand{\Pn}{{P}_{\bold{n}}}
+\newcommand{\Hn}{{H}_{\bold{n}}}
+\newcommand{\Hln}{{H}^{(1)}_{\bold{n}}}
+\newcommand{\Fln}{{F}^{(1)}_{\bold{n}}}
+\newcommand{\Fn}{{F}_{\bold{n}}}
+\newcommand{\gn}{{g}_{\bold{n}}}
+\newcommand{\pn}{{\varphi}_{\bold{n}}}
+\newcommand{\En}{E_{\bold{n}}}
+\newcommand{\Ln}{L_{\bold{n}}}
+\newcommand{\Rn}{R_{\bold{n}}}
+\newcommand{\Lk}{L_{\bold{k}}}
+\newcommand{\Rk}{R_{\bold{k}}}
+\newcommand{\Lm}{L_{\bold{m}}}
+\newcommand{\Rm}{R_{\bold{m}}}
 
-\newcommand{\nJ}{\sum_{\bar{n}}^{\Jt}}
-\newcommand{\nG}{\sum_{\bar{n}}^{\Gt}}
-\newcommand{\nI}{\sum_{\bar{n}}^{\It}}
+\newcommand{\nJ}{\sum_{\bold{n}}^{\Jt}}
+\newcommand{\nG}{\sum_{\bold{n}}^{\Gt}}
+\newcommand{\nI}{\sum_{\bold{n}}^{\It}}
 
 \newcommand{\dt}{
     \Delta t
@@ -93,6 +96,19 @@
     \Lunity{\sum_{#2=0}^{M-1}{#1}_{#2} - 1}
     \T{\prod_{{#2}=0}^{M-1}\LuniqueBase{#1}{#2}}
     \Q{{#1}_{#3}\executionAbsoluteIntensity{{#3}}}
+}
+\newcommand{\seqStandartStar}[2]{
+    {#1}_{({#2}_0, {#2}_1, ... {#2}_{M-1})^*}
+}
+\newcommand{\seqMinusStar}[3]{
+    {#1}_{({#2}_0, {#2}_1, ... , {#2}_{#3} - 1,  ... {#2}_{M-1})^*}
+}
+\newcommand{\seqPlusStar}[3]{
+    {#1}_{({#2}_0, {#2}_1, ... , {#2}_{#3} + 1,  ... {#2}_{M-1})^*}
+}
+\newcommand{\seqMinusPlusStar}[4]{
+    {#1}_{({#2}_0, {#2}_1, ... , {#2}_{#3} - 1, ... , 
+        {#2}_{#4} + 1, ... {#2}_{M-1})^*}
 }
 \newcommand{\seqStandart}[2]{
     {#1}_{{#2}_0, {#2}_1, ... {#2}_{M-1}}

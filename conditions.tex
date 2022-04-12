@@ -1,24 +1,24 @@
-\[P_{y^*, z^*}( i, l, t, h) = P\{z^* = y^*(t + h), l = i(t + h)\text{ }|\text{ } y^* = y^*(t), i = i(t) \},\]
-\[P_{y^*}(i, t) = P_{0, y^*}( 0, i, 0, t).\]
-Где y(t) \(\in \mathbb{V}\) - вектор состояния системы массосвого обслуживания, а i(t) - количество заявок на орбите. 
+\[P_{\bold{y}^*, \bold{z}^*}( i, l, t, h) = P\{\bold{z}^* = \bold{y}^*(t + h), l = i(t + h)\text{ }|\text{ } \bold{y}^* = \bold{y}^*(t), i = i(t) \},\]
+\[P_{\bold{y}^*}(i, t) = P_{0, \bold{y}^*}( 0, i, 0, t).\]
+Где \(\bold{y}\)(t) \(\in \mathbb{V}\) - вектор состояния системы массосвого обслуживания, а i(t) - количество заявок на орбите. 
 \( t,h \in [0; + \infty) \subset \mathbb{R}\).\\
 Теорема 1:
 Если \(\exists \mathbb{J} \subset \mathbb{V}\), такое что:
 \begin{equation}\label{condition_of_main_theorem}\begin{aligned}
-		1.& \forall \bar{y} \in \mathbb{J}^\complement = \mathbb{V} \setminus{} \mathbb{J},
-		\forall \bar{z} \in \mathbb{V}, \forall i,l\in [0,+\infty)\subset \mathbb{Z}, 
+		1.& \forall \bold{y} \in \mathbb{J}^\complement = \mathbb{V} \setminus{} \mathbb{J},
+		\forall \bold{z} \in \mathbb{V}, \forall i,l\in [0,+\infty)\subset \mathbb{Z}, 
 		\forall t,h \in [0;+\infty) \subset \mathbb{R}: \\
-		&P_{ y^*, z^*}( i, l, t, h)  = P_{y^*, z^*}( i, l, t, h) =  0.\\
+		&P_{ \bold{y}^*, \bold{z}^*}( i, l, t, h)  = P_{\bold{y}^*, \bold{z}^*}( i, l, t, h) =  0.\\
 		2.& \text{При очень малых h } 
-            \forall \bar{y},\bar{z} \in \mathbb{J}, 
+            \forall \bold{y},\bold{z} \in \mathbb{J}, 
             \forall i,l\in [0,+\infty)\subset \mathbb{Z}, 
-            (y^* \neq z^*) \& (i \neq l):\\
-		    &P_{ y^*, z^*}(l, i, t, h) =  L^{(l-i)}_{ y^*, z^*}(i)h + o(h).\\
-		    &\text{Где: }L^{(q)}_{ y^*, z^*}(i)=C^{(q)}_{ y^*, z^*, 0}+\sum^{N}_{k=1}i^kC^{(q)}_{ y^*, z^*, k}, 
-		    \text{ }C^{(q)}_{ y^*, z^*, k}\in \mathbb{R}; N \in \mathbb{N}.\\
-		    &\text{И, } \forall y^*,z^* \in [0,M^n -1] \subset \mathbb{Z},C^{(-1)}_{ y^*, z^*,0} = 0,\\
+            (\bold{y}^* \neq \bold{z}^*) \& (i \neq l):\\
+		    &P_{ \bold{y}^*, \bold{z}^*}(l, i, t, h) =  L^{(l-i)}_{ \bold{y}^*, \bold{z}^*}(i)h + o(h).\\
+		    &\text{Где: }L^{(q)}_{ \bold{y}^*, \bold{z}^*}(i)=C^{(q)}_{ \bold{y}^*, \bold{z}^*, 0}+\sum^{N}_{k=1}i^kC^{(q)}_{ \bold{y}^*, \bold{z}^*, k}, 
+		    \text{ }C^{(q)}_{ \bold{y}^*, \bold{z}^*, k}\in \mathbb{R}; N \in \mathbb{N}.\\
+		    &\text{И, } \forall \bold{y}^*,\bold{z}^* \in [0,M^n -1] \subset \mathbb{Z},C^{(-1)}_{ \bold{y}^*, \bold{z}^*,0} = 0,\\
 		    &\text{При }q\in ((-\infty,-1) \cup (W, +\infty)) \subset \mathbb{Z}, 
-		    L^{(q)}_{ y^*, z^*}(i)=0, W \in \mathbb{N}, W < +\infty.
+		    L^{(q)}_{ \bold{y}^*, \bold{z}^*}(i)=0, W \in \mathbb{N}, W < +\infty.
 \end{aligned} \end{equation}
 Тогда:
 \[\pdv{\boldsymbol{H}(u,t)}{t} =\sum_{k = 0}^{N}(-j)^k \pdv[k]{\boldsymbol{H}(u,t)}{u} \bigg[
@@ -29,6 +29,6 @@
 	\boldsymbol{C}_{q,k} = ||C^{(q)}_{\tilde{n},\tilde{m}, k}(1-\delta_{n,m}\delta_{q,0})||,
 	\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\boldsymbol{D}_k = \bigg|\bigg|\delta_{n,m}
 	\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{q = -1 ,\atop \tilde{\nu}\neq \tilde{n}\& q\neq 0 }^{W}C^{(q)}_{\tilde{\nu},\tilde{n},k} \bigg|\bigg|, \\
-	j^*_1 < j^*_2 < j^*_3 <... < j^*_{|\mathbb{J}|} < M^n, \text{ }\text{ }\text{ }
-	\forall \nu \in [1, |\mathbb{J}|] \subset \mathbb{Z}, \tilde{\nu} = j^*_{\nu}.
+	\bold{j}^*_1 < \bold{j}^*_2 < \bold{j}^*_3 <... < \bold{j}^*_{|\mathbb{J}|} < M^n, \text{ }\text{ }\text{ }
+	\forall \nu \in [1, |\mathbb{J}|] \subset \mathbb{Z}, \tilde{\nu} = \bold{j}^*_{\nu}.
 \end{gather*}
