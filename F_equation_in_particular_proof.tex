@@ -9,17 +9,17 @@
     &+j \En \pdv{\seqStandart{F}{n}(w,\tau)}{w}(i,\tau) + \\
     &+\overline{\En} \lambda \seqStandart{F}{n}(w,\tau)+\\
     &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{F}{n}(w,\tau) + \\
-    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinus{F}{n}{k}(w,\tau) + \\
-    &-j\sum_{k=0}^{M-1}q_k \pdv{\seqMinus{F}{n}{k}(w,\tau)}{w} + \\
-    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{F}{n}{f}(w,\tau) + \\
-    &+\En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{F}{n}{f}(w,\tau) + \\
+    &+\lambda\sum_{k=1}^{M}q_k \seqMinus{F}{n}{k}(w,\tau) + \\
+    &-j\sum_{k=1}^{M}q_k \pdv{\seqMinus{F}{n}{k}(w,\tau)}{w} + \\
+    &+\En r_0 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{F}{n}{f}(w,\tau) + \\
+    &+\En r_2 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{F}{n}{f}(w,\tau) + \\
     &+r_1 \feedbackSum{f}{k}
         q_k \mu_f (n_f+1) \seqMinusPlus{F}{n}{k}{f}(w,\tau).
 \end{aligned}\end{equation}
 
 Будем искать решение в виде \(\Fn = \Rn e^{jwx(\tau)}\):
 \begin{equation} \label{RSumEqualsToOne}
-    1 = \sum_{\bar{n}}^{\Jt}\Rn,
+    1 = \sum_{\bold{n}}^{\Jt}\Rn,
 \end{equation}
 \begin{equation}\begin{aligned} \label{RFirstEverParticular}
 0=
@@ -27,10 +27,10 @@
     &-\En x(\tau) \seqStandart{R}{n} + \\
     &+\overline{\En} \lambda \seqStandart{R}{n} +\\
     &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{R}{n} + \\
-    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinus{R}{n}{k} + \\
-    &+\sum_{k=0}^{M-1}q_k \seqMinus{R}{n}{k} + \\
-    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{R}{n}{f} + \\
-    &+\En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{R}{n}{f} + \\
+    &+\lambda\sum_{k=1}^{M}q_k \seqMinus{R}{n}{k} + \\
+    &+\sum_{k=1}^{M}q_k \seqMinus{R}{n}{k} + \\
+    &+\En r_0 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{R}{n}{f} + \\
+    &+\En r_2 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{R}{n}{f} + \\
     &+r_1 \feedbackSum{f}{k}
         q_k \mu_f (n_f+1) \seqMinusPlus{R}{n}{k}{f}.
 \end{aligned}\end{equation}
@@ -40,8 +40,8 @@
 0=
     &-\Q{\En \T{\lxt}+\allExecutionFullIntensity{n}{k}}\seqStandart{R}{n}+\\
     &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{R}{n} + \\
-    &+\T{\lxt}\sum_{k=0}^{M-1}q_k \seqMinus{R}{n}{k} + \\
-    &+\En (1 - r_1) \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{R}{n}{f} + \\
+    &+\T{\lxt}\sum_{k=1}^{M}q_k \seqMinus{R}{n}{k} + \\
+    &+\En (1 - r_1) \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{R}{n}{f} + \\
     &+r_1 \feedbackSum{f}{k}
         q_k \mu_f (n_f+1) \seqMinusPlus{R}{n}{k}{f}.
 \end{aligned}\end{equation}

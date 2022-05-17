@@ -7,10 +7,10 @@
     &+j \En \pdv{\seqStandart{F}{n}(w,\tau,\varepsilon)}{w}(i,\tau) + \\
     &+\overline{\En} \lambda e^{j\varepsilon w} \seqStandart{F}{n}(w,\tau,\varepsilon)+\\
     &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{F}{n}(w,\tau,\varepsilon) + \\
-    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinus{F}{n}{k}(w,\tau,\varepsilon) + \\
-    &-j  e^{-j\varepsilon w} \sum_{k=0}^{M-1}q_k \pdv{\seqMinus{F}{n}{k}(w,\tau,\varepsilon)}{w} + \\
-    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{F}{n}{f}(w,\tau,\varepsilon) + \\
-    &+\En r_2 e^{j\varepsilon w} \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{F}{n}{f}(w,\tau,\varepsilon) + \\
+    &+\lambda\sum_{k=1}^{M}q_k \seqMinus{F}{n}{k}(w,\tau,\varepsilon) + \\
+    &-j  e^{-j\varepsilon w} \sum_{k=1}^{M}q_k \pdv{\seqMinus{F}{n}{k}(w,\tau,\varepsilon)}{w} + \\
+    &+\En r_0 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{F}{n}{f}(w,\tau,\varepsilon) + \\
+    &+\En r_2 e^{j\varepsilon w} \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{F}{n}{f}(w,\tau,\varepsilon) + \\
     &+r_1 \feedbackSum{f}{k}
         q_k \mu_f (n_f+1) \seqMinusPlus{F}{n}{k}{f}(w,\tau,\varepsilon),
 \end{aligned}\end{equation}
@@ -20,7 +20,7 @@
 \Bigg\{
     &\lambda \nI \seqStandart{F}{n}(w,\tau,\varepsilon)+\\
     &+j e^{-j \varepsilon w} \nG\pdv{\seqStandart{F}{n}(w,\tau,\varepsilon)}{w} + \\
-    &+r_2\sum_{f=0}^{M-1} \mu_f \nJ n_f \seqStandart{F}{n}(w,\tau,\varepsilon)
+    &+r_2\sum_{f=1}^{M} \mu_f \nJ n_f \seqStandart{F}{n}(w,\tau,\varepsilon)
 \Bigg\}
 .
 \end{aligned}\end{equation}

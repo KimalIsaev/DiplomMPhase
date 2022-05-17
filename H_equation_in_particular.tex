@@ -6,10 +6,10 @@
     &+j \sigma \En \pdv{\seqStandart{H}{n}(u,t)}{u}(i,t) + \\
     &+\overline{\En} \lambda e^{ju} \seqStandart{H}{n}(u,t)+\\
     &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{H}{n}(u,t) + \\
-    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinus{H}{n}{k}(u,t) + \\
-    &-j \sigma  e^{-ju} \sum_{k=0}^{M-1}q_k \pdv{\seqMinus{H}{n}{k}(u,t)}{u} + \\
-    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{H}{n}{f}(u,t) + \\
-    &+\En r_2 e^{ju} \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{H}{n}{f}(u,t) + \\
+    &+\lambda\sum_{k=1}^{M}q_k \seqMinus{H}{n}{k}(u,t) + \\
+    &-j \sigma  e^{-ju} \sum_{k=1}^{M}q_k \pdv{\seqMinus{H}{n}{k}(u,t)}{u} + \\
+    &+\En r_0 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{H}{n}{f}(u,t) + \\
+    &+\En r_2 e^{ju} \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{H}{n}{f}(u,t) + \\
     &+r_1 \feedbackSum{f}{k}
         q_k \mu_f (n_f+1) \seqMinusPlus{H}{n}{k}{f}(u,t).
 \end{aligned}\end{equation*}
@@ -24,14 +24,14 @@
 \begin{equation}\begin{aligned}
 \Q{\bold{v}\boldsymbol{C}_{0,0}}_{\bold{n}^*} =&
     r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandartStar{\varv}{n} + \\
-    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinusStar{\varv}{n}{k} + \\
-    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlusStar{\varv}{n}{f} + \\
+    &+\lambda\sum_{k=1}^{M}q_k \seqMinusStar{\varv}{n}{k} + \\
+    &+\En r_0 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlusStar{\varv}{n}{f} + \\
     &+r_1 \feedbackSum{f}{k} q_k \mu_f (n_f+1) \seqMinusPlusStar{\varv}{n}{k}{f}, \\
 \Q{\bold{v}\boldsymbol{C}_{1,0}}_{\bold{n}^*} =
     &\overline{\En} \lambda \seqStandartStar{\varv}{n}+
-    \En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlusStar{\varv}{n}{f}, \\
+    \En r_2 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlusStar{\varv}{n}{f}, \\
 \Q{\bold{v}\boldsymbol{K}}_{\bold{n}^*} =
-    &\sum_{k=0}^{M-1}q_k\seqMinusStar{\varv}{n}{k}(u,t).
+    &\sum_{k=1}^{M}q_k\seqMinusStar{\varv}{n}{k}(u,t).
 \end{aligned}\end{equation}
 Очевидно что вид матрицы \(\boldsymbol{D}_0\) и \(\boldsymbol{I}\) 
 будет соответствовать виду изложенному в предыдущей главе, тогда
@@ -48,10 +48,10 @@
     &+j \sigma \En \pdv{\seqStandart{H}{n}(u,t)}{u}(i,t) + \\
     &+\overline{\En} \lambda e^{ju} \seqStandart{H}{n}(u,t)+\\
     &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{H}{n}(u,t) + \\
-    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinus{H}{n}{k}(u,t) + \\
-    &-j \sigma  e^{-ju} \sum_{k=0}^{M-1}q_k \pdv{\seqMinus{H}{n}{k}(u,t)}{u} + \\
-    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{H}{n}{f}(u,t) + \\
-    &+\En r_2 e^{ju} \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{H}{n}{f}(u,t) + \\
+    &+\lambda\sum_{k=1}^{M}q_k \seqMinus{H}{n}{k}(u,t) + \\
+    &-j \sigma  e^{-ju} \sum_{k=1}^{M}q_k \pdv{\seqMinus{H}{n}{k}(u,t)}{u} + \\
+    &+\En r_0 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{H}{n}{f}(u,t) + \\
+    &+\En r_2 e^{ju} \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{H}{n}{f}(u,t) + \\
     &+r_1 \feedbackSum{f}{k}
         q_k \mu_f (n_f+1) \seqMinusPlus{H}{n}{k}{f}(u,t),
 \end{aligned}\end{equation}
@@ -61,7 +61,7 @@
 \Bigg\{
     &\lambda \nI \seqStandart{H}{n}(u,t)+\\
     &+j\sigma e^{-ju} \nG\pdv{\seqStandart{H}{n}(u,t)}{u} + \\
-    &+r_2\sum_{f=0}^{M-1} \mu_f \nJ n_f \seqStandart{H}{n}(u,t)
+    &+r_2\sum_{f=1}^{M} \mu_f \nJ n_f \seqStandart{H}{n}(u,t)
 \Bigg\}
 .
 \end{aligned}\end{equation}

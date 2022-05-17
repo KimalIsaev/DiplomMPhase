@@ -7,10 +7,10 @@
         \seqStandart{P}{n}(i,t)+\\
     &+\dt \overline{\En} \lambda \seqStandart{P}{n}(i-1,t)+\\
     &+\dt r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{P}{n}(i,t) + \\
-    &+\dt \lambda\sum_{k=0}^{M-1}q_k \seqMinus{P}{n}{k}(i,t) + \\
-    &+\dt (i+1)\sigma\sum_{k=0}^{M-1}q_k \seqMinus{P}{n}{k}(i+1,t) + \\
-    &+\dt \En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i,t) + \\
-    &+\dt \En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i-1,t) + \\
+    &+\dt \lambda\sum_{k=1}^{M}q_k \seqMinus{P}{n}{k}(i,t) + \\
+    &+\dt (i+1)\sigma\sum_{k=1}^{M}q_k \seqMinus{P}{n}{k}(i+1,t) + \\
+    &+\dt \En r_0 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i,t) + \\
+    &+\dt \En r_2 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i-1,t) + \\
     &+\dt r_1 \feedbackSum{f}{k}
         q_k \mu_f (n_f+1) \seqMinusPlus{P}{n}{k}{f}(i,t) + \\
     &+o(\dt).
@@ -22,10 +22,10 @@
     &-\Q{\les+\allExecutionFullIntensity{n}{k}}\seqStandart{P}{n}(i,t)+\\
     &+\overline{\En} \lambda \seqStandart{P}{n}(i-1,t)+\\
     &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{P}{n}(i,t) + \\
-    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinus{P}{n}{k}(i,t) + \\
-    &+(i+1)\sigma\sum_{k=0}^{M-1}q_k \seqMinus{P}{n}{k}(i+1,t) + \\
-    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i,t) + \\
-    &+\En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i-1,t) + \\
+    &+\lambda\sum_{k=1}^{M}q_k \seqMinus{P}{n}{k}(i,t) + \\
+    &+(i+1)\sigma\sum_{k=1}^{M}q_k \seqMinus{P}{n}{k}(i+1,t) + \\
+    &+\En r_0 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i,t) + \\
+    &+\En r_2 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i-1,t) + \\
     &+r_1 \feedbackSum{f}{k}
         q_k \mu_f (n_f+1) \seqMinusPlus{P}{n}{k}{f}(i,t) + \\
     &+\frac{o(\dt)}{\dt}.
@@ -37,10 +37,10 @@
     &-\Q{\les+\allExecutionFullIntensity{n}{k}}\seqStandart{P}{n}(i,t)+\\
     &+\overline{\En} \lambda \seqStandart{P}{n}(i-1,t)+\\
     &+r_1 \Q{\allExecutionRelativeIntensity{n}{k}} \seqStandart{P}{n}(i,t) + \\
-    &+\lambda\sum_{k=0}^{M-1}q_k \seqMinus{P}{n}{k}(i,t) + \\
-    &+(i+1)\sigma\sum_{k=0}^{M-1}q_k \seqMinus{P}{n}{k}(i+1,t) + \\
-    &+\En r_0 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i,t) + \\
-    &+\En r_2 \sum_{f=0}^{M-1} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i-1,t) + \\
+    &+\lambda\sum_{k=1}^{M}q_k \seqMinus{P}{n}{k}(i,t) + \\
+    &+(i+1)\sigma\sum_{k=1}^{M}q_k \seqMinus{P}{n}{k}(i+1,t) + \\
+    &+\En r_0 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i,t) + \\
+    &+\En r_2 \sum_{f=1}^{M} \mu_f (n_f + 1) \seqPlus{P}{n}{f}(i-1,t) + \\
     &+r_1 \feedbackSum{f}{k}
         q_k \mu_f (n_f+1) \seqMinusPlus{P}{n}{k}{f}(i,t).
 \end{aligned}\end{equation*}

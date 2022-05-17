@@ -1,11 +1,12 @@
 \documentclass[a4paper, 12pt]{article}
 %\usepackage[OT2, T1]{fontenc}
+\usepackage[left=3cm,right=1.5cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{minted}
 \usepackage[utf8]{inputenc}
-\usepackage[T2A]{fontenc}
-\usepackage[unicode, pdftex]{hyperref}
+%\usepackage[T1, T2A]{fontenc}
+\usepackage[unicode]{hyperref}
 \usepackage[russian, english]{babel}
 \usepackage{comment}
 \usepackage{subfiles}
@@ -14,6 +15,49 @@
 \usepackage{changepage}
 \usepackage{physics}
 \usepackage[fleqn,tbtags]{mathtools}
+
+\usepackage{titletoc}
+\usepackage{titlesec}
+\usepackage{titleps}
+%\usepackage[no-math]{fontspec}
+\usepackage{fontspec}%
+\newfontfeature{Microtype}{protrusion=default;expansion=default;}%
+%\setmainfont[Ligatures=TeX]{Iwona Cond}
+\setmainfont{times}[
+  Extension      = .ttf ,
+  BoldFont       = *bd ,
+  ItalicFont     = *i ,
+  BoldItalicFont = *bi
+  %Microtype,
+  %Ligatures = TeX,
+  %BoldFont = timesbd.ttf,
+  %ItalicFont = timesi.ttf,
+  %BoldItalicFont = timesbi.ttf,
+]
+\usepackage[none]{hyphenat}
+\sloppy
+\hyphenation{ин\-тен\-сив\-ность ин\-тен\-сив\-нос\-тя\-ми}
+
+\usepackage{lipsum}
+\usepackage{float}
+\setlength\parindent{12.5mm}
+
+\setlength{\parskip}{1em}
+
+\addto\captionsrussian{% Replace "english" with the language you use
+    \renewcommand{\contentsname}%
+    {\centering{\normalsize{ОГЛАВЛЕНИЕ}}}%
+}
+\addto\captionsrussian{% Replace "english" with the language you use
+    \renewcommand{\figurename}{Рисунок}
+}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage[nooneline]{caption}
+\captionsetup[figure]{justification=centering,labelsep=endash}
+\captionsetup[table]{justification=centering,labelsep=endash}
 
 \DeclareSymbolFont{matha}{OML}{txmi}{m}{it}
 \DeclareMathSymbol{\varv}{\mathord}{matha}{118}
@@ -26,7 +70,7 @@
 \newcommand{\It}{\mathbb{I}}
 \newcommand{\Gt}{\mathbb{G}}
 \newcommand{\Zt}{\mathbb{Z}}
-\newcommand{\Mt}{[0,M)\subset\Zt}
+\newcommand{\Mt}{[1,M]\subset\Zt}
 \newcommand{\Nt}{[0,N]\subset\Zt}
 
 \newcommand{\Pn}{{P}_{\bold{n}}}
@@ -71,7 +115,7 @@
 }
 \newcommand{\LunityStandart}[2]{
     \Lunity{
-        \sum_{#2=0}^{M-1}{#1}_{#2}
+        \sum_{#2=1}^{M}{#1}_{#2}
     }
 }
 \newcommand{\executionAbsoluteIntensity}[1]{
@@ -85,7 +129,7 @@
         \Q{\executionAbsoluteReverseIntensity{#2}}^{{#1}_{#2}}
 }
 \newcommand{\LuniqueStandart}[2]{
-    \prod_{{#2}=0}^{M-1}
+    \prod_{{#2}=1}^{M}
     \LuniqueBase{#1}{#2}
 }
 
@@ -94,50 +138,83 @@
     \LuniqueStandart{#1}{#2}
 }
 \newcommand{\LminusDefinition}[3]{
-    \Lunity{\sum_{#2=0}^{M-1}{#1}_{#2} - 1}
-    \T{\prod_{{#2}=0}^{M-1}\LuniqueBase{#1}{#2}}
+    \Lunity{\sum_{{#2}=1}^{M}{#1}_{#2} - 1}
+    \T{\prod_{{#2}=1}^{M}\LuniqueBase{#1}{#2}}
     \Q{{#1}_{#3}\executionAbsoluteIntensity{{#3}}}
 }
 \newcommand{\seqStandartStar}[2]{
-    {#1}_{({#2}_0, {#2}_1, ... {#2}_{M-1})^*}
+    {#1}_{({#2}_1, {#2}_2, ... {#2}_{M})^*}
 }
 \newcommand{\seqMinusStar}[3]{
-    {#1}_{({#2}_0, {#2}_1, ... , {#2}_{#3} - 1,  ... {#2}_{M-1})^*}
+    {#1}_{({#2}_1, {#2}_2, ... , {#2}_{#3} - 1,  ... {#2}_{M})^*}
 }
 \newcommand{\seqPlusStar}[3]{
-    {#1}_{({#2}_0, {#2}_1, ... , {#2}_{#3} + 1,  ... {#2}_{M-1})^*}
+    {#1}_{({#2}_1, {#2}_2, ... , {#2}_{#3} + 1,  ... {#2}_{M})^*}
 }
 \newcommand{\seqMinusPlusStar}[4]{
-    {#1}_{({#2}_0, {#2}_1, ... , {#2}_{#3} - 1, ... , 
-        {#2}_{#4} + 1, ... {#2}_{M-1})^*}
+    {#1}_{({#2}_1, {#2}_2, ... , {#2}_{#3} - 1, ... , 
+        {#2}_{#4} + 1, ... {#2}_{M})^*}
 }
 \newcommand{\seqStandart}[2]{
-    {#1}_{{#2}_0, {#2}_1, ... {#2}_{M-1}}
+    {#1}_{{#2}_1, {#2}_2, ... {#2}_{M}}
 }
 \newcommand{\seqMinus}[3]{
-    {#1}_{{#2}_0, {#2}_1, ... , {#2}_{#3} - 1,  ... {#2}_{M-1}}
+    {#1}_{{#2}_1, {#2}_2, ... , {#2}_{#3} - 1,  ... {#2}_{M}}
 }
 \newcommand{\seqPlus}[3]{
-    {#1}_{{#2}_0, {#2}_1, ... , {#2}_{#3} + 1,  ... {#2}_{M-1}}
+    {#1}_{{#2}_1, {#2}_2, ... , {#2}_{#3} + 1,  ... {#2}_{M}}
 }
 \newcommand{\seqMinusPlus}[4]{
-    {#1}_{{#2}_0, {#2}_1, ... , {#2}_{#3} - 1, ... , 
-        {#2}_{#4} + 1, ... {#2}_{M-1}}
+    {#1}_{{#2}_1, {#2}_2, ... , {#2}_{#3} - 1, ... , 
+        {#2}_{#4} + 1, ... {#2}_{M}}
 }
 \newcommand{\allExecutionFullIntensity}[2]{
-    \sum_{{#2}=0}^{M-1}\mu_{#2}{#1}_{#2}
+    \sum_{{#2}=1}^{M}\mu_{#2}{#1}_{#2}
 }
 \newcommand{\allExecutionRelativeIntensity}[2]{
-    \sum_{{#2}=0}^{M-1} q_{#2}\mu_{#2}{#1}_{#2} 
+    \sum_{{#2}=1}^{M} q_{#2}\mu_{#2}{#1}_{#2} 
 }
 \newcommand{\feedbackSum}[2]{
-    \sum_{{#1}=0}^{M-1} \sum_{{#2}=0, {#2} \neq {#1}}^{M-1}
+    \sum_{{#1}=1}^{M} \sum_{{#2}=1, {#2} \neq {#1}}^{M}
 }
 \DeclareMathOperator*{\argmax}{arg\,max}
 \NewEnviron{urv}[1]{\begin{adjustwidth}{-#1pt}{0pt}\begin{align*} \BODY \end{align*}\end{adjustwidth}}
 \begin{document}
-    \subfile{norm}\\\\
+    \subfile{titulList}
     \newpage
+    \setcounter{page}{2}
+    \subfile{tasks}
+    \begin{center}
+        \bf{АННОТАЦИЯ}
+    \end{center}
+    \subfile{anotaciya}
+    \newpage
+
+\setcounter{secnumdepth}{0}
+\dottedcontents{section}[3.8em]{}{2.3em}{1pc}
+\dottedcontents{subsection}[5em]{}{2.3em}{1pc}
+    \tableofcontents
+    \newpage
+
+\titleformat*{\section}{\bf \center \uppercase}
+ \(\text{ }\)\\
+
+\sloppy
+\section{Введение}
+
+    \subfile{introduction}
+    \newpage
+
+\titleformat*{\section}{\bf  \filright \uppercase}
+\titlespacing{\section}{12.5mm}{*1}{*1}
+%\titlespacing{\section}{5pt}{*4}{*1.5}
+\titleformat*{\subsection}{\bf \filright }
+\titlespacing{\subsection}{12.5mm}{*1}{*1}
+\section{1 Исcледование марковской системы массового обслуживания с постоянными интенсивностями перехода между состояниями, за исключением интенсивности ухода заявок с орбиты, с общей орбитой, на которую заявки приходят и с которой заявки уходят ординарно, в условиях стремящейся к бесконечности задержки на орбите}
+\subsection{1.1 Получение системы дифференциальнных уравнений в частных производных}
+\setlength\parindent{12.5mm}
+
+    \subfile{norm}\\\\
     \subfile{conditions}
     \newpage
     \subfile{kolmogorov_before_differential}
@@ -148,19 +225,16 @@
     \newpage
     \subfile{pre_partial_case}
     \newpage
+\subsection{1.2 Получение аппроксимации решения системы дифференциальных уравнений}
+    \setlength\parindent{12.5mm}
+\section{2 Исследование M|$H_M$|N с общей орбитой.}
+
     \subfile{stationary_probability_theorem}
     \newpage
     \subfile{a}
     \newpage
     \subfile{theorem14_description}
     \subfile{theorem14_proof}
-    \newpage
-    \subfile{usl}
-    \newpage
-	\subfile{library_code}
-    \newpage
-	\subfile{example_code}
-    %\subfile{introduce_set_v.tex}
     \newpage
     \subfile{sets_in_particular}
     \subfile{P_equation_in_particular}
@@ -171,4 +245,13 @@
     \subfile{L_equation_in_particular}
     \subfile{x_equation_in_particular}
     \subfile{proof_for_proof}
+\section{3 Нахождение программными средствами аппроксимации распределения заявок на орбите}
+
+    \subfile{usl}
+    \newpage
+	\subfile{library_code}
+    \newpage
+	\subfile{example_code}
+    %\subfile{introduce_set_v.tex}
+    \newpage
 \end{document}
