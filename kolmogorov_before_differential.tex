@@ -9,13 +9,42 @@
 	P_{\bold{x}^*, \bold{y}^*}(i, w, t, h)P_{\bold{x}^*}(w, t).
 \end{urv}
 Заменим вероятность перехода по 3 условию \eqref{condition_of_main_theorem}:
-\begin{urv}{60}
-	P_{\bold{y}^*}(i, t+h) = \left[2 - h 
-	\sum_{\bold{x}^* \in J}\sum_{w=0,\atop \bold{x}^*\neq \bold{y}^*\& w\neq i}^{\infty}
-	L^{(w-i)}_{\bold{y}^*, \bold{x}^*}(i)\right]
-	P_{\bold{y}^*}(i, t)+h\sum_{\bold{x}^* \in J}\sum_{w=0,\atop \bold{x}^*\neq \bold{y}^*\& w\neq i}^{\infty}
+\begin{align*}
+	P_{\bold{y}^*}(i, t+h) =
+	& \left[1 - h \sum_{\bold{x}^* \in J}
+	\bigg(\eta i K_{\bold{y}^*, \bold{x}^*}
+        + (1 - \delta_{\bold{x}^*, \bold{y}^*}) 
+			 C_{\bold{y}^*, \bold{x}^*}
+        + B_{\bold{y}^*, \bold{x}^*}\bigg)
+	\right]P_{\bold{y}^*}(i, t)+\\
+	&h\sum_{\bold{x}^* \in J}
+	\bigg(\eta (i+1) K_{\bold{x}^*, \bold{y}^*}P_{\bold{x}^*}(i+1, t)
+        + (1 - \delta_{\bold{x}^*, \bold{y}^*}) 
+			C_{\bold{x}^*, \bold{y}^*}P_{\bold{x}^*}(i, t)
+        + B_{\bold{x}^*, \bold{y}^*}P_{\bold{x}^*}(i-1, t) \bigg)+o(h).
+\end{align*}
+Прибавим и вычтем \(C_{\bold{y}^*,\bold{y}^*}P_{\bold{y}^*}(i, t)\):
+\begin{align*} 
+    P_{\bold{y}^*}(i, t+h) =
+    & \left[1 - h \sum_{\bold{x}^* \in J}
+    \bigg(\eta i K_{\bold{y}^*, \bold{x}^*}
+        + C_{\bold{y}^*, \bold{x}^*} 
+        + B_{\bold{y}^*, \bold{x}^*}\bigg)
+    \right]P_{\bold{y}^*}(i, t)+\\ 
+    &h\sum_{\bold{x}^* \in J} 
+    \bigg(\eta (i+1) K_{\bold{x}^*, \bold{y}^*}P_{\bold{x}^*}(i+1, t)
+        + C_{\bold{x}^*, \bold{y}^*}P_{\bold{x}^*}(i, t) 
+        + B_{\bold{x}^*, \bold{y}^*}P_{\bold{x}^*}(i-1, t) \bigg)+o(h).
+\end{align*} 
+\begin{comment}
+\begin{align*}
+	P_{\bold{y}^*}(i, t+h) =& \left[2 - h 
+	\sum_{\bold{x}^* \in J}\kronsum{\bold{y}^*, \bold{x}^*}
+	\right]P_{\bold{y}^*}(i, t)+\\
+	&h\sum_{\bold{x}^* \in J}\sum_{w=0,\atop \bold{x}^*\neq \bold{y}^*\& w\neq i}^{\infty}
 	L^{(i-w)}_{\bold{x}^*, \bold{y}^*}(w)P_{\bold{x}^*}(w, t)+o(h).
-\end{urv}
+\end{align*}
+\end{comment}
 Заменим суммированние по множеству на суммированние от 1 до \(|\mathbb{J}|\).
 Пронумируем элементы множества \(\mathbb{J}\) в порядке возрастания значения нумеровочной функции.
 \[\bold{j}^*_1 < \bold{j}^*_2 < \bold{j}^*_3 <... < \bold{j}^*_{|\mathbb{J}|} < M^n,\]

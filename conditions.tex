@@ -8,6 +8,52 @@
 		1.& \forall \bold{y} \in \mathbb{J}^\complement = \mathbb{V} \setminus{} \mathbb{J},
 		\forall \bold{z} \in \mathbb{V}, \forall i,l\in [0,+\infty)\subset \mathbb{Z}, 
 		\forall t,h \in [0;+\infty) \subset \mathbb{R}: \\
+		&P_{ \bold{y}^*, \bold{z}^*}( i, l, t, h)  = P_{\bold{z}^*, \bold{y}^*}( i, l, t, h) =  0.\\
+		2.& \text{При очень малых h, } \forall \bold{y},\bold{z} \in \mathbb{J}: \\
+			&P_{ \bold{y}^*, \bold{z}^*}(i, i, t, h) = C_{\bold{y}^*, \bold{z}^*}; \\
+			&P_{ \bold{y}^*, \bold{z}^*}(i, i+1, t, h) = B_{\bold{y}^*, \bold{z}^*}; \\
+			&P_{ \bold{y}^*, \bold{z}^*}(i, i-1, t, h) = \eta K_{\bold{y}^*, \bold{z}^*}i; \\
+			&P_{ \bold{y}^*, \bold{z}^*}(i, i+q, t, h) = 0; \\
+            &\forall i \in [0,+\infty)\subset \mathbb{Z}, \forall q \in (-\infty, -1) \cup (1,+\infty) \subset \mathbb{Z}, 
+\end{aligned} \end{equation}
+Тогда:
+\begin{equation}\label{pervoe_uravnenie_partial}
+    \pdv{\boldsymbol{H}(u,t)}{t} =
+    \boldsymbol{H}(u,t)\bigg[\boldsymbol{C} + e^{ju}\boldsymbol{B} - \boldsymbol{D}\bigg]
+    -j\eta\pdv{\boldsymbol{H}(u,t)}{u}\bigg[e^{-ju}\boldsymbol{K} - \boldsymbol{I}\bigg].
+\end{equation}
+\begin{equation}\label{vtoroe__uravnenie}
+    \pdv{\boldsymbol{H}(u,t)}{t}\boldsymbol{e} =
+    (e^{ju} - 1) \bigg[
+    \boldsymbol{H}(u,t)  \boldsymbol{B}
+    + j\eta e^{-ju}\pdv{\boldsymbol{H}(u,t)}{u}\boldsymbol{I} \bigg]\boldsymbol{e}.
+\end{equation}
+Где,
+\begin{gather*}
+	\boldsymbol{H}(u,t) = \bigg[H_{\tilde{1}}(u,t), H_{\tilde{2}}(u,t), ... H_{\tilde{|\mathbb{J}|} }(u,t)\bigg] ,\\
+	\boldsymbol{C} = ||C_{\tilde{n},\tilde{m}}||,
+	\text{ }\text{ }\text{ }\text{ }\text{ }
+	\boldsymbol{B} = ||B_{\tilde{n},\tilde{m}}||,
+	\text{ }\text{ }\text{ }\text{ }\boldsymbol{D} = \bigg|\bigg|\delta_{n,m}
+	\sum_{\nu = 1}^{|\mathbb{J}|}\bigg(C_{\tilde{\nu},\tilde{n}} + B_{\tilde{\nu},\tilde{n}} \bigg)\bigg|\bigg|, \\
+	\boldsymbol{K} = ||K_{\tilde{n},\tilde{m}}||,
+	\text{ }\text{ }\text{ }\text{ }\boldsymbol{I} = \bigg|\bigg|\delta_{n,m}
+	\sum_{\nu = 1}^{|\mathbb{J}|}K_{\tilde{\nu},\tilde{n}}\bigg|\bigg|, \\
+	\bold{j}^*_1 < \bold{j}^*_2 < \bold{j}^*_3 <... < \bold{j}^*_{|\mathbb{J}|} < M^n, \text{ }\text{ }\text{ }
+	\forall \nu \in [1, |\mathbb{J}|] \subset \mathbb{Z}, \tilde{\nu} = \bold{j}^*_{\nu}.
+\end{gather*}
+
+\begin{comment}
+\[P_{\bold{y}^*, \bold{z}^*}( i, l, t, h) = P\{\bold{z}^* = \bold{y}^*(t + h), l = i(t + h)\text{ }|\text{ } \bold{y}^* = \bold{y}^*(t), i = i(t) \},\]
+\[P_{\bold{y}^*}(i, t) = P_{0, \bold{y}^*}( 0, i, 0, t).\]
+Где \(\bold{y}\)(t) \(\in \mathbb{V}\) - вектор состояния системы массосвого обслуживания, а i(t) - количество заявок на орбите. 
+\( t,h \in [0; + \infty) \subset \mathbb{R}\).\\
+Теорема 1:
+Если \(\exists \mathbb{J} \subset \mathbb{V}\), такое что:
+\begin{equation}\label{condition_of_main_theorem}\begin{aligned}
+		1.& \forall \bold{y} \in \mathbb{J}^\complement = \mathbb{V} \setminus{} \mathbb{J},
+		\forall \bold{z} \in \mathbb{V}, \forall i,l\in [0,+\infty)\subset \mathbb{Z}, 
+		\forall t,h \in [0;+\infty) \subset \mathbb{R}: \\
 		&P_{ \bold{y}^*, \bold{z}^*}( i, l, t, h)  = P_{\bold{y}^*, \bold{z}^*}( i, l, t, h) =  0.\\
 		2.& \text{При очень малых h } 
             \forall \bold{y},\bold{z} \in \mathbb{J}, 
@@ -32,3 +78,4 @@
 	\bold{j}^*_1 < \bold{j}^*_2 < \bold{j}^*_3 <... < \bold{j}^*_{|\mathbb{J}|} < M^n, \text{ }\text{ }\text{ }
 	\forall \nu \in [1, |\mathbb{J}|] \subset \mathbb{Z}, \tilde{\nu} = \bold{j}^*_{\nu}.
 \end{gather*}
+\end{comment}
