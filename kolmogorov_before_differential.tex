@@ -50,17 +50,29 @@
 \[\bold{j}^*_1 < \bold{j}^*_2 < \bold{j}^*_3 <... < \bold{j}^*_{|\mathbb{J}|} < M^n,\]
 \[\forall \nu \in [1, |\mathbb{J}|] \subset \mathbb{Z}, \tilde{\nu} = \bold{j}^*_{\nu}.\]
 В таком случае:
-\begin{urv}{60}
-	P_{\bold{y}^*}(i, t+h) = \left[1 - h 
-	\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq \bold{y}^*\& w\neq i}^{\infty}
-	L^{(w-i)}_{ \bold{y}^*, \tilde{\nu}}(i)\right]
-	P_{\bold{y}^*}(i, t)+h\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq \bold{y}^*\& w\neq i}^{\infty}
-	L^{(i-w)}_{\tilde{\nu}, \bold{y}^*}(w)P_{\tilde{\nu}}(w, t)+o(h).
-\end{urv}
+\begin{align*} 
+    P_{y^*}(i, t+h) =
+    & \left[1 - h \sum^{|\mathbb{J}|}_{\nu=1}
+	\bigg(\eta i K_{y^*, \tilde{\nu}}
+	+ C_{y^*, \tilde{\nu}} 
+	+ B_{{y^*}, \tilde{\nu}}\bigg)
+	\right]P_{y^*}(i, t)+\\ 
+    &h\sum^{|\mathbb{J}|}_{\nu=1} 
+	\bigg(\eta (i+1) K_{\tilde{\nu}, \bold{y}^*}P_{\bold{\tilde{\nu}}}(i+1, t)
+	+ C_{\tilde{\nu}, y^*}P_{\tilde{\nu}}(i, t) 
+	+ B_{\tilde{\nu}, y^*}P_{\tilde{\nu}}(i-1, t) \bigg)+o(h).
+\end{align*} 
+
 Перенесём \(P_{\bold{y}^*}(i, t)\) в левую часть и разделим всё на h:
-\begin{urv}{60}
-	\frac{P_{\bold{y}^*}(i, t+h) - P_{\bold{y}^*}(i, t)}{h}  =
-	- \sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq \bold{y}^*\& w\neq i}^{\infty}L^{(w-i)}_{\bold{y}^*, \tilde{\nu}}(i)P_{\bold{y}^*}(i, t)+
-	\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{w=0,\atop \tilde{\nu} \neq \bold{y}^*\& w\neq i}^{\infty}
-	L^{(i-w)}_{\tilde{\nu}, \bold{y}^*}(w)P_{\tilde{\nu}}(w, t) + o(1).
-\end{urv}
+\begin{align*} 
+    \frac{P_{y^*}(i, t+h) - P_{y^*}(i, t)}{h} =
+    &- \sum^{|\mathbb{J}|}_{\nu=1}
+        \bigg(\eta i K_{y^*, \tilde{\nu}}
+        + C_{y^*, \tilde{\nu}} 
+        + B_{{y^*}, \tilde{\nu}}\bigg)
+        P_{y^*}(i, t)+\\
+    &\sum^{|\mathbb{J}|}_{\nu=1} 
+        \bigg(\eta (i+1) K_{\tilde{\nu}, \bold{y}^*}P_{\bold{\tilde{\nu}}}(i+1, t)
+        + C_{\tilde{\nu}, y^*}P_{\tilde{\nu}}(i, t) 
+        + B_{\tilde{\nu}, y^*}P_{\tilde{\nu}}(i-1, t) \bigg)+o(1).
+\end{align*} 

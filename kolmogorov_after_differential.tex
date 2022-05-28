@@ -1,20 +1,18 @@
-\begin{urv}{60}
-	\pdv{H_{\bold{y}^*}(u,t)}{t} =\sum_{k = 0}^{N}(-j)^k\bigg[
-	\sum_{q = -1}^{W} e^{juq} \sum_{\nu = 1, \atop \tilde{\nu}\neq \bold{y}^*\& q\neq 0}^{|\mathbb{J}|} 
-	 C^{(q)}_{\tilde{\nu}, \bold{y}^*,k}\pdv[k]{H_{\tilde{\nu}}(u,t)}{u}
-	-\pdv[k]{H_{\bold{y}^*}(u,t)}{u}
-	\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{q = -1 ,\atop \tilde{\nu}\neq \bold{y}^*\& q\neq 0 }^{W}C^{(q)}_{\bold{y}^*, \tilde{\nu},k}
-	\bigg].\\
-\end{urv}	
 Обозначим:
 \begin{gather*}
 	\boldsymbol{H}(u,t) = \bigg[H_{\tilde{1}}(u,t), H_{\tilde{2}}(u,t), ... H_{\tilde{|\mathbb{J}|} }(u,t)\bigg] ,\\
-	\boldsymbol{C}_{q,k} = ||C^{(q)}_{\tilde{n},\tilde{m}, k}(1-\delta_{n,m}\delta_{q,0})||,
-	\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\boldsymbol{D}_k = \bigg|\bigg|\delta_{n,m}
-    \sum_{\nu = 1}^{|\mathbb{J}|}\sum_{q = -1 ,\atop \tilde{\nu}\neq \tilde{n}\& q\neq 0 }^{W}C^{(q)}_{\tilde{\nu},\tilde{n},k} \bigg|\bigg|.
+	\boldsymbol{C} = ||C_{\tilde{n},\tilde{m}}||,
+	\text{ }\text{ }\text{ }\text{ }\text{ }
+	\boldsymbol{B} = ||B_{\tilde{n},\tilde{m}}||,
+	\text{ }\text{ }\text{ }\text{ }\boldsymbol{D} = \bigg|\bigg|\delta_{n,m}
+	\sum_{\nu = 1}^{|\mathbb{J}|}\bigg(C_{\tilde{\nu},\tilde{n}} + B_{\tilde{\nu},\tilde{n}} \bigg)\bigg|\bigg|, \\
+	\boldsymbol{K} = ||K_{\tilde{n},\tilde{m}}||,
+	\text{ }\text{ }\text{ }\text{ }\boldsymbol{I} = \bigg|\bigg|\delta_{n,m}
+	\sum_{\nu = 1}^{|\mathbb{J}|}K_{\tilde{\nu},\tilde{n}}\bigg|\bigg|.
 \end{gather*}
 И получим:
-\begin{equation} \label{pervoe_uravnenie}
-	\pdv{\boldsymbol{H}(u,t)}{t} =\sum_{k = 0}^{N}(-j)^k\pdv[k]{\boldsymbol{H}(u,t)}{u}\bigg[
-	\sum_{q = -1}^{W} e^{juq}\boldsymbol{C}_{q,k}-\boldsymbol{D}_k\bigg].
+\begin{equation}\label{pervoe_uravnenie_partial}
+    \pdv{\boldsymbol{H}(u,t)}{t} =
+    \boldsymbol{H}(u,t)\bigg[\boldsymbol{C} + e^{ju}\boldsymbol{B} - \boldsymbol{D}\bigg]
+    -j\eta\pdv{\boldsymbol{H}(u,t)}{u}\bigg[e^{-ju}\boldsymbol{K} - \boldsymbol{I}\bigg].
 \end{equation}
