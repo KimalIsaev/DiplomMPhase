@@ -1,12 +1,15 @@
-Определим \(\boldsymbol{e}\) как вектор-столбец из единиц размерности \(|\mathbb{J}|\), 
-а \(0\) как вектор-строка из нулей размерности \(|\mathbb{J}|\) и покажем утверждение:
-\begin{equation} \label{summa_na_edinich_nol}
-	\bigg[\sum_{q = -1}^{W} \boldsymbol{C}_{q,k}-\boldsymbol{D}_k\bigg]\boldsymbol{e}=0.
+Домножив матричное уравнение на единичный вектор-столбец $\boldsymbol{e}$ и,
+с учетом $$(\boldsymbol{C} + \boldsymbol{S} - \boldsymbol{D}) \boldsymbol{e} = 0$$ 
+и $$(\boldsymbol{K} - \boldsymbol{I}) \boldsymbol{e} = 0$$ получим
+\begin{equation} \label{vtoroe__uravnenie}
+\begin{aligned} 
+    \frac{\partial \boldsymbol{H}(u,t)}{\partial t}\boldsymbol{e}=
+        &\boldsymbol{H}(u,t)(e^{ju}-1)\boldsymbol{S}\boldsymbol{e}
+            +j\eta e^{-ju}\frac{\partial \boldsymbol{H}(u,t)}{\partial u}(e^{ju}-1)\boldsymbol{I}\boldsymbol{e}=\\
+        &=(e^{ju}-1)\Bigg[\boldsymbol{H}(u,t)\boldsymbol{S}
+            +j\eta e^{-ju}\frac{\partial \boldsymbol{H}(u,t)}{\partial u}\boldsymbol{I} \Bigg]\boldsymbol{e}.
+\end{aligned}
 \end{equation}
-Оно пригоится нам в дальнейшем. \(\forall n \in [1, |\mathbb{J}|] \subset \mathbb{Z}\):
-\[\sum_{q = -1}^{W}\sum_{\nu = 1, \atop \tilde{\nu}\neq y^*\& q\neq 0}^{|\mathbb{J}|} C^{(q)}_{\tilde{n}, \tilde{\nu},k}-
-\sum_{\nu = 1}^{|\mathbb{J}|}\sum_{q = -1 ,\atop \tilde{\nu}\neq y^*\& q\neq 0 }^{W}C^{(q)}_{\tilde{n}, \tilde{\nu},k} = 0.\]
-Следовательно, каждый элемент итогового стобца равен нулю, а значет сам вектор-столбец нулевой.
 \begin{comment}
 Благодаря утверждению \eqref{summa_na_edinich_nol} можем преобразовать  \eqref{uravnenie_isaeva}:
 \[\pdv{\boldsymbol{H}(u,t)}{t}\overline{\boldsymbol{E}}=\boldsymbol{H}(u,t)(e^{ju}-1)\]

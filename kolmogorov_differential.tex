@@ -16,24 +16,24 @@
 А теперь складываем по i все различные равенства, оставляя \(\bold{y}^*\) и t по-
 стоянными, каждое домножив перед этим каждое на \(e^{iuj}\):
 \begin{align*}
-    \pdv{H_{y^*}(i, t)}{t} =                   
+    \pdv{H_{y^*}(u, t)}{t} =                   
     &- \sum_{i = 0}^{\infty}\sum^{|\mathbb{J}|}_{\nu=1}
         \bigg(\eta i K_{y^*, \tilde{\nu}}
         + C_{y^*, \tilde{\nu}} 
         + B_{{y^*}, \tilde{\nu}}\bigg)
-        P_{y^*}(i, t)+\\
+        P_{y^*}(i, t)e^{iuj}+\\
     &+\sum_{i = 0}^{\infty}\sum^{|\mathbb{J}|}_{\nu=1} 
         \bigg(\eta (i+1) K_{\tilde{\nu}, \bold{y}^*}P_{\bold{\tilde{\nu}}}(i+1, t)
         + C_{\tilde{\nu}, y^*}P_{\tilde{\nu}}(i, t) 
-        + B_{\tilde{\nu}, y^*}P_{\tilde{\nu}}(i-1, t) \bigg).     
+        + B_{\tilde{\nu}, y^*}P_{\tilde{\nu}}(i-1, t) \bigg)e^{iuj}.     
 \end{align*}
 Расскроем скобки и перепишем:
 \begin{align*} 
-    \pdv{H_{y^*}(i, t)}{t} =                   
-	& j\eta \sum^{|\mathbb{J}|}_{\nu=1} K_{y^*, \tilde{\nu}}\pdv{H_{y^*}(i, t)}{u}
-        - \sum^{|\mathbb{J}|}_{\nu=1}C_{y^*, \tilde{\nu}} H_{y^*}(i, t)
-        - \sum^{|\mathbb{J}|}_{\nu=1}B_{{y^*}, \tilde{\nu}}H_{y^*}(i, t)+\\
-	&+j\eta e^{-ju} \sum^{|\mathbb{J}|}_{\nu=1} K_{\tilde{\nu}, y^*}\pdv{H_{y^*}(i, t)}{u}
-        + \sum^{|\mathbb{J}|}_{\nu=1}C_{\tilde{\nu}, y^*}H_{y^*}(i, t) 
-	+ e^{ju}\sum^{|\mathbb{J}|}_{\nu=1}B_{\tilde{\nu}, y^*}H_{y^*}(i, t).     
+    \pdv{H_{y^*}(u, t)}{t} =                   
+	& j\eta \sum^{|\mathbb{J}|}_{\nu=1} K_{y^*, \tilde{\nu}}\pdv{H_{y^*}(u, t)}{u}
+        - \sum^{|\mathbb{J}|}_{\nu=1}C_{y^*, \tilde{\nu}} H_{y^*}(u, t)
+        - \sum^{|\mathbb{J}|}_{\nu=1}B_{{y^*}, \tilde{\nu}}H_{y^*}(u, t)+\\
+	&+j\eta e^{-ju} \sum^{|\mathbb{J}|}_{\nu=1} K_{\tilde{\nu}, y^*}\pdv{H_{y^*}(u, t)}{u}
+        + \sum^{|\mathbb{J}|}_{\nu=1}C_{\tilde{\nu}, y^*}H_{y^*}(u, t) 
+	+ e^{ju}\sum^{|\mathbb{J}|}_{\nu=1}B_{\tilde{\nu}, y^*}H_{y^*}(u, t).     
 \end{align*}
