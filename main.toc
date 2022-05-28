@@ -1,0 +1,12 @@
+\babel@toc {english}{}
+\ttl@change@i {\@ne }{section}{3.8em}{}{\contentslabel {2.3em}}{\hspace *{-2.3em}}{\titlerule *[1pc]{.}\contentspage }\relax 
+\ttl@change@v {section}{}{}{}\relax 
+\ttl@change@i {\@ne }{subsection}{5em}{}{\contentslabel {2.3em}}{\hspace *{-2.3em}}{\titlerule *[1pc]{.}\contentspage }\relax 
+\ttl@change@v {subsection}{}{}{}\relax 
+\contentsline {section}{Введение}{6}{Doc-Start}%
+\contentsline {section}{1 Исcледование марковской системы массового обслуживания с постоянными интенсивностями перехода между состояниями, за исключением интенсивности ухода заявок с орбиты, с общей орбитой, на которую заявки приходят и с которой заявки уходят ординарно, в условиях стремящейся к бесконечности задержки на орбите}{7}{Doc-Start}%
+\contentsline {subsection}{1.1 Получение системы дифференциальнных уравнений в частных производных}{7}{section*.1}%
+\contentsline {subsection}{1.2 Получение аппроксимации решения системы дифференциальных уравнений}{14}{equation.0.10}%
+\contentsline {section}{2 Исследование M|$H_M$|N с общей орбитой.}{22}{equation.0.35}%
+\contentsline {section}{3 Нахождение программными средствами аппроксимации распределения заявок на орбите}{34}{equation.0.56}%
+\contentsfinish 

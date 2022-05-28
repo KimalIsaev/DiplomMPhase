@@ -7,7 +7,7 @@
 \usepackage[utf8]{inputenc}
 %\usepackage[T1, T2A]{fontenc}
 \usepackage[unicode]{hyperref}
-\usepackage[russian, english]{babel}
+\usepackage[russian]{babel}
 \usepackage{comment}
 \usepackage{subfiles}
 \usepackage{pxfonts}
@@ -15,6 +15,15 @@
 \usepackage{changepage}
 \usepackage{physics}
 \usepackage[fleqn,tbtags]{mathtools}
+
+
+\addto\captionsrussian{% Replace "english" with the language you use
+	\renewcommand{\contentsname}%
+	{\centering{\normalsize{ОГЛАВЛЕНИЕ}}}%
+}
+\addto\captionsrussian{% Replace "english" with the language you use
+	\renewcommand{\figurename}{Рисунок}
+}
 
 \usepackage{titletoc}
 \usepackage{titlesec}
@@ -43,15 +52,6 @@
 \setlength\parindent{12.5mm}
 
 \setlength{\parskip}{1em}
-
-\addto\captionsrussian{% Replace "english" with the language you use
-    \renewcommand{\contentsname}%
-    {\centering{\normalsize{ОГЛАВЛЕНИЕ}}}%
-}
-\addto\captionsrussian{% Replace "english" with the language you use
-    \renewcommand{\figurename}{Рисунок}
-}
-
 \usepackage{setspace}
 \onehalfspacing
 
@@ -94,6 +94,8 @@
 \newcommand{\nJ}{\sum_{\bold{n}}^{\Jt}}
 \newcommand{\nG}{\sum_{\bold{n}}^{\Gt}}
 \newcommand{\nI}{\sum_{\bold{n}}^{\It}}
+
+
 
 \newcommand{\dt}{
     \Delta t
