@@ -1,12 +1,12 @@
 Домножив матричное уравнение на единичный вектор-столбец $\boldsymbol{e}$ и,
-с учетом $$(\boldsymbol{C} + \boldsymbol{S} - \boldsymbol{D}) \boldsymbol{e} = 0$$ 
+с учетом $$(\boldsymbol{C} + \boldsymbol{B} - \boldsymbol{D}) \boldsymbol{e} = 0$$ 
 и $$(\boldsymbol{K} - \boldsymbol{I}) \boldsymbol{e} = 0$$ получим
 \begin{equation} \label{vtoroe__uravnenie}
 \begin{aligned} 
     \frac{\partial \boldsymbol{H}(u,t)}{\partial t}\boldsymbol{e}=
-        &\boldsymbol{H}(u,t)(e^{ju}-1)\boldsymbol{S}\boldsymbol{e}
+        &\boldsymbol{H}(u,t)(e^{ju}-1)\boldsymbol{B}\boldsymbol{e}
             +j\eta e^{-ju}\frac{\partial \boldsymbol{H}(u,t)}{\partial u}(e^{ju}-1)\boldsymbol{I}\boldsymbol{e}=\\
-        &=(e^{ju}-1)\Bigg[\boldsymbol{H}(u,t)\boldsymbol{S}
+        &=(e^{ju}-1)\Bigg[\boldsymbol{H}(u,t)\boldsymbol{B}
             +j\eta e^{-ju}\frac{\partial \boldsymbol{H}(u,t)}{\partial u}\boldsymbol{I} \Bigg]\boldsymbol{e}.
 \end{aligned}
 \end{equation}

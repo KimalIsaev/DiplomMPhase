@@ -1,22 +1,26 @@
-При соблюдени условий \eqref{uslovie_vtorogo_uravnenia} cделаем замены:
+При соблюдени условий \eqref{condition_of_main_theorem} cделаем замены:
 \begin{equation}\label{first_changes}
 	\eta=\varepsilon ,\tau=t\varepsilon, u=\varepsilon w, \boldsymbol{H}(u,t)=\boldsymbol{F}(w,\tau, \varepsilon),
 \end{equation}
 \begin{equation}\label{first_changes2}
-	\boldsymbol{A}=\boldsymbol{C}-\boldsymbol{D}, \boldsymbol{B}=\boldsymbol{C}_{1,0}.
+	\boldsymbol{A}=\boldsymbol{C}-\boldsymbol{D}.
 \end{equation}
 
-Тогда мы можем переписать уравнение \eqref{pervoe_uravnenie_partial}:
-\begin{equation}\label{pervoe_partial_epsilon}
-\varepsilon \pdv{\boldsymbol{F}(w,\tau,\varepsilon)}{\tau} =
-\boldsymbol{F}(w,\tau,\varepsilon)\bigg[\boldsymbol{A} + e^{j\varepsilon w}\boldsymbol{B}\bigg]
--j\pdv{\boldsymbol{F}(w,\tau,\varepsilon)}{w}\bigg[e^{-j\varepsilon w}\boldsymbol{K} - \boldsymbol{L}\bigg].
-\end{equation}
+Тогда мы можем переписать уравнения \eqref{pervoe_uravnenie_partial} и \eqref{vtoroe__uravnenie}:
+\begin{equation*}\label{pervoe_partial_epsilon}
+        \varepsilon \pdv{\boldsymbol{F}(w,\tau,\varepsilon)}{\tau} =
+        \boldsymbol{F}(w,\tau,\varepsilon)\bigg[\boldsymbol{A} + e^{j\varepsilon w}\boldsymbol{B}\bigg]
+        -j\pdv{\boldsymbol{F}(w,\tau,\varepsilon)}{w}\bigg[e^{-j\varepsilon w}\boldsymbol{K} - \boldsymbol{I}\bigg].
+\end{equation*}
+\[\varepsilon \pdv{\boldsymbol{F}(w,\tau,\varepsilon)}{\tau} \boldsymbol{e} = 
+(e^{jw\varepsilon} - 1)  \bigg[\boldsymbol{F}(w,\tau,\varepsilon) \boldsymbol{B}+
+je^{-jw\varepsilon}  \pdv{\boldsymbol{F}(w,\tau,\varepsilon)}{w}\boldsymbol{I}   \bigg]\boldsymbol{e}.\]
 
-Теорема 1.3.
+
+Теорема 1.2:
 Если 
 \begin{equation}\begin{aligned}\label{uslovie_tretiego_uravnenia}
-	1.&\text{Выполняеются условия \eqref{uslovie_vtorogo_uravnenia}}.\\
+	1.&\text{Выполняеются условия \eqref{condition_of_main_theorem}}.\\
 	2.&Rank(\boldsymbol{S}) = |\mathbb{J}|, \text{где}\\
 	&\boldsymbol{S} = \bigg[ \boldsymbol{A} + \boldsymbol{B} +x(\tau)(\boldsymbol{K}-\boldsymbol{I}), \boldsymbol{e} \bigg],\\
 	&\boldsymbol{u}= \bigg[ 0^T, 1 \bigg].\\
