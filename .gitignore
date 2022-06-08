@@ -3,5 +3,5 @@
 *.pdf
 *.out
 .*vis*
-_minted-main/
+_minted-*/
 
